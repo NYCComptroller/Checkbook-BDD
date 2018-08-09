@@ -28,7 +28,6 @@ public class DatabaseUtil {
 		if (con == null) {
 			EnvironmentVariables variables = SystemEnvironmentVariables.createEnvironmentVariables();
 			String URL = variables.getProperty("database.connection.url");
-			System.out.println("Verifying db url " + URL);
 			Properties props = new Properties();
 			props.setProperty("user", variables.getProperty("database.user"));
 			props.setProperty("password", variables.getProperty("database.password"));
