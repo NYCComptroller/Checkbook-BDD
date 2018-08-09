@@ -107,7 +107,7 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>9.4.1212.jre7</version>
+            <version>9.4.1212</version>
         </dependency>
     </dependencies>
     
@@ -131,6 +131,9 @@
             <webdriver.driver>${webdriver.driver}</webdriver.driver>
             <webdriver.remote.driver>${webdriver.remote.driver}</webdriver.remote.driver>
             <webdriver.remote.url>${webdriver.remote.url}</webdriver.remote.url> 
+            <database.connection.url>${database.connection.url}</database.connection.url>
+            <database.user>${database.user}</database.user>
+            <database.password>${database.password}</database.password>
           </systemPropertyVariables>
         </configuration>
       </plugin>
