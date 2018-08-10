@@ -33,6 +33,20 @@ public class CheckbookBasePageObject extends PageObject {
 		return ExecutionContext.getJsonData();
 	}
 	
+	public void waitForElement(By by) {
+		withTimeoutOf(TIMEOUT, ChronoUnit.SECONDS).waitForPresenceOf(by);
+	}
+	
+	public void waitForElement(By by, int timeoutSeconds) {
+		withTimeoutOf(timeoutSeconds, ChronoUnit.SECONDS).waitForPresenceOf(by);
+	}
+	
+	public void waitForElementToDisappear(By by) {
+		if (checkForPresenceOfElementWithoutWaiting(by)) {
+			withTimeoutOf(TIMEOUT, ChronoUnit.SECONDS).waitForElementsToDisappear(by);
+		}
+	}
+	
 	public WebElement findElement(By by) {
 		withTimeoutOf(TIMEOUT, ChronoUnit.SECONDS).waitForPresenceOf(by);
 		return find(by);

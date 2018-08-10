@@ -29,10 +29,31 @@ public class SpendingPage extends CheckbookBasePageObject {
 	
 	public void navigateToSubTabType(String subTabType) {
 		clickLink(By.xpath("//div[@class='positioning']/a[contains(text(), '" + subTabType + "')]"));
+		waitForRenderedElementsToDisappear(By.id("table_checks_view_processing"));
 	}
 	
 	public String getCurrentSelectedSubTabType() {
 		return findElement(By.xpath("//td[contains(@class, 'active')]/div[@class='positioning']/a")).getText();
+	}
+	
+	public void navigateToWidgetDetails(String widgetOption) {
+		waitForElement(By.xpath("//span[contains(text(), 'Number of " + widgetOption + "')]"), 60);
+		clickLink(By.xpath("//span[contains(text(), 'Number of " + widgetOption + "')]/../../../../..//a[contains(text(), 'Details')]"));
+		waitForElementToDisappear(By.xpath("//img[@title='Loading Data...']"));
+		waitForElementToDisappear(By.id("table_706_processing"));
+		waitForElement(By.id("table_706_wrapper"), 60);
+	}
+	
+	public String getTotalCountForWidgetDetails() {
+		return findElement(By.id("table_706_info")).getText();
+	}
+	
+	public String getWidgetDetailTitle() {
+		return findElement(By.className("contract-title")).getText();
+	}
+	
+	public String getTransactionAmount() {
+		return findElement(By.className("total-spending-amount")).getText();
 	}
 	
 }
