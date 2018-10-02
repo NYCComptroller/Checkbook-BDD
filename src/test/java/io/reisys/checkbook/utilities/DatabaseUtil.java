@@ -2193,6 +2193,8 @@ public class DatabaseUtil {
 				+ "(CASE WHEN amount_basis_id=1 THEN 'Salaried' ELSE 'Non-Salaried' END) as type_of_employment "
 				+ "FROM payroll WHERE fiscal_year = " + year + " and amount_basis_id in (1,2,3)	GROUP BY 1,2,3,9 ) a";
 
+		query2 = "select count(*) aCount from public_nycha.payroll WHERE calendar_fiscal_year = 2018 and amount_basis_id in (1,2,3)";
+		
 		rs = amountQueryHelper(yearTypeVal);
 		int count = 0;
 		while (rs.next()) {

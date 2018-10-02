@@ -1,0 +1,11 @@
+{
+	"Selected Year" : "2019",
+	"Nycha" : "New York City Housing Authority", 
+	
+	"Payroll Visualization Titles" : [ "Gross Pay by Month", 
+	    						            "Overtime Payments by Month"],
+	    						
+	"Payroll Widget Titles" : [ "Top 5 Annual Salaries",
+	    				     "Top 5 Titles by Number of Employees"]     								
+	
+}

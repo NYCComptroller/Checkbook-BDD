@@ -4,7 +4,7 @@ Feature: Checkbook Spending Tab
 
   Background: 
     Given I navigate to Spending Page
-    When I select "Selected Year" for getting Spending data
+    When I select "Selected Year" for getting data
 
   @totalSpending
   Scenario: Navigate to Total Spending Tab and Validate Total Spending Widget Data

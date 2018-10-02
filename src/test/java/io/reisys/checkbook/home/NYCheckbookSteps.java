@@ -7,7 +7,8 @@ public class NYCheckbookSteps extends ScenarioSteps {
 	
 	NYCheckbookPage checkbookPage;
 
-	@When("^I select \"([^\"]*)\" for getting Spending data$")
+	@When("^I select \"([^\"]*)\" for getting data$")
+	
 	public void selectYear(String year) {
 		checkbookPage.selectYear(year);
 	}
