@@ -8,8 +8,8 @@ import io.reisys.checkbook.bdd.cucumber.TestDataFile;
 
 @CucumberOptions(plugin = { "pretty" , "html:target/AdvancedSearchRunner.html" },
 tags = {"@PopulateRangeFields", "not @wip"},
-features = { "src/test/resources/features"},
-glue={"io.reisys.checkbook"}
+features = { "src/test/resources/features/AdvancedSearch/AdvancedSearchRevenue.feature"},
+glue={"io.reisys.checkbook.revenue"}
 )
 @TestDataFile(files = { "src/test/resources/data/revenueData.json"
 						})
