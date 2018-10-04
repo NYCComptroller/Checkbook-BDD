@@ -18,7 +18,7 @@ public class PayrollSteps extends CheckbookBaseScenarioSteps {
 	
 	@Given("^I navigate to Advanced Search Payroll OGE Page$")
 	public void navigateToAdvancedSearchPayrollFormPage() {
-		homePage.open();
+		    homePage.open();
 				payrollPage.navigateToOGEPage();
 				payrollPage.navigateToNYCHAPage();
 				payrollPage.navigateToAdvancedSearchPage();		

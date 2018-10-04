@@ -9,7 +9,7 @@ import io.reisys.checkbook.bdd.cucumber.TestDataFile;
 @CucumberOptions(plugin = { "pretty" , "html:target/SpendingRunner.html" },
 tags = {"@totalSpending", "not @wip"},
 features = { "src/test/resources/features"},
-glue={"io.reisys.checkbook"}
+glue={"io.reisys.checkbook.spending","io.reisys.checkbook.home"}
 )
 @TestDataFile(files = { "src/test/resources/data/spendingData.json"
 						})
