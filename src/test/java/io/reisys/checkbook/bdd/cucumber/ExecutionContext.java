@@ -1,5 +1,9 @@
 package io.reisys.checkbook.bdd.cucumber;
 
+import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
+
 import com.google.gson.JsonObject;
 
 public class ExecutionContext {
@@ -8,9 +12,11 @@ public class ExecutionContext {
 	private static String dataProvided;
 	private static String dataAsserted;
 	private static String testRunFailures;
+	private static SortedSet<BDDTestResult> testResults;
 	
 	public static void init(JsonObject jsonData) {
 		jsonTestData = jsonData;
+		testResults = new TreeSet<BDDTestResult>();
 	}
 	
 	public static void cleanUp() {
@@ -56,5 +62,13 @@ public class ExecutionContext {
 	
 	public static void appendToTestRunFailure(String failure) {
 		testRunFailures += failure;
+	}
+	
+	public static void addTestResults(BDDTestResult testResult) {
+		testResults.add(testResult);
+	}
+
+	public static Set<BDDTestResult> getTestResults() {
+		return testResults;
 	}
 }
