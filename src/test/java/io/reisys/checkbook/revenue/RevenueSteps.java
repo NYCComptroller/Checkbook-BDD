@@ -1,6 +1,13 @@
 package io.reisys.checkbook.revenue;
 
 
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.google.gson.JsonArray;
+
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -93,6 +100,25 @@ public class RevenueSteps extends CheckbookBaseScenarioSteps {
 		
 		softAssertion.assertAll();
 	}
+	@Then("^we should see \"([^\"]*)\" in the form$")
+	public void validateLabel(String Labelname) {
+	  List<String> LabelsToVerify = CommonUtility.convertJsonArrayToList(ExecutionContext.getJsonData().get(Labelname).getAsJsonArray());
+		for(String name:LabelsToVerify) {
+	    String elementXpath= ExecutionContext.getJsonData().get(name).getAsString();
+		String result = revenuePage.getLabelName(elementXpath);
+		assertEquals( name,result);
+		}
+	}
+	@Then("^\"([^\"]*)\" dropdown has \"([^\"]*)\" as default value$")
+	public void Verifydefaultvalue(String labelName, String value) {
+		 String element= ExecutionContext.getJsonData().get(labelName).getAsString();
+		String result = revenuePage.getDropDownDefaultValue(element);
+		assertEquals( value,result);
+		 
+	    
+	  
+	}
+
 	
 	
 	

@@ -170,5 +170,18 @@ public class RevenuePage extends CheckbookBasePageObject {
 	findElement(By.id("edit-revenue-recognized-from")).sendKeys(from);
 	findElement(By.id("edit-revenue-recognized-to")).sendKeys(to);
 	}
-	
+  public String getLabelName(String Xpath) {
+	  
+	 return findElement(By.xpath("//label[@for=\""+Xpath+"\"]")).getText();
+  }
+
+
+
+
+public String getDropDownDefaultValue(String value) {
+	// TODO Auto-generated method stub
+	Select select = new Select(findElement(By.id(value)));
+	String defaultItem =  select.getFirstSelectedOption().getText();
+	return defaultItem;
+}
 }

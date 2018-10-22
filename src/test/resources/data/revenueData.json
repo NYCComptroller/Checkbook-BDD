@@ -9,7 +9,17 @@
 	"Adopted From":"100",
 	"Adopted To":"2000000",
 	"Recognized From":"100",
-	"Recognized To":"500000"
+	"Recognized To":"500000",
+	"Labels":["Budget FY","Agency","Revenue Category","Revenue Source","Fiscal Year","Funding Class","Revenue Class","Fund Class"],
+	"Budget FY":"edit-revenue-budget-fiscal-year",
+	"Agency":"edit-revenue-agencies",
+	"Revenue Category":"edit-revenue-revenue-category",
+	"Revenue Source":"edit-revenue-revenue-source",
+	"Fiscal Year":"edit-revenue-fiscal-year",
+	"Funding Class":"edit-revenue-funding-source",
+	"Revenue Class":"edit-revenue-revenue-class",
+	"Fund Class":"edit-revenue-fund-class"
+	
 	
 	
 }
