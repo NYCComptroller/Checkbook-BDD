@@ -40,6 +40,7 @@ public class DatabaseUtil {
 	// Closes connection
 	public static void closeDatabase() throws SQLException {
 		con.close();
+		con = null;
 	}
 
 	// Returns an array of all the years from 2009 till current

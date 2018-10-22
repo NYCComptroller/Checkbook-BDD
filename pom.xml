@@ -25,6 +25,12 @@
 	      <groupId>net.serenity-bdd</groupId>
 	      <artifactId>serenity-core</artifactId>
 	      <version>${serenity.version}</version>
+	      <exclusions>
+	                <exclusion>
+	                    <groupId>net.serenity-bdd</groupId>
+	                    <artifactId>serenity-report-resources</artifactId>
+	                </exclusion>
+	            </exclusions>
 	    </dependency>
 	    <dependency>
 	      <groupId>net.serenity-bdd</groupId>
@@ -109,6 +115,18 @@
             <artifactId>postgresql</artifactId>
             <version>9.4.1212</version>
         </dependency>
+		<dependency>
+	    	<groupId>commons-lang</groupId>
+	    	<artifactId>commons-lang</artifactId>
+	    	<version>2.6</version>
+		</dependency>    
+	        <dependency>
+	          <groupId>net.serenity-bdd</groupId>
+		         <artifactId>serenity-report-resources</artifactId>
+		         <version>${serenity.maven.version}</version>
+				 <scope>system</scope>
+				 <systemPath>${project.basedir}/src/test/resources/customization/serenity-report-resources.jar</systemPath>		        
+			</dependency>		     
     </dependencies>
     
    	<build>
@@ -142,6 +160,26 @@
         <groupId>net.serenity-bdd.maven.plugins</groupId>       
         <artifactId>serenity-maven-plugin</artifactId>
         <version>${serenity.maven.version}</version>
+        <dependencies>
+	        <dependency>
+	            <groupId>net.serenity-bdd</groupId>
+	            <artifactId>serenity-core</artifactId>
+	            <version>${serenity.version}</version>
+	            <exclusions>
+	                <exclusion>
+	                    <groupId>net.serenity-bdd</groupId>
+	                    <artifactId>serenity-report-resources</artifactId>
+	                </exclusion>
+	            </exclusions>
+	        </dependency>
+	        <dependency>
+	          <groupId>net.serenity-bdd</groupId>
+		         <artifactId>serenity-report-resources</artifactId>
+		         <version>${serenity.maven.version}</version>
+				 <scope>system</scope>
+				 <systemPath>${project.basedir}/src/test/resources/customization/serenity-report-resources.jar</systemPath>		        
+			</dependency>
+		</dependencies>    
         <executions>
           <execution>
             <id>serenity-reports</id>
