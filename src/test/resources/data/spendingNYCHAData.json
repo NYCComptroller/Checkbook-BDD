@@ -1,0 +1,61 @@
+{
+	"Selected Year" : "2020",
+		
+	"Nycha" : "New York City Housing Authority", 
+	
+	"Total Spending Visualization Titles" : ["Total Spending Across Years",
+	                             "Total Spending", 
+	    						"Top Ten Vendors by Disbursement Amount", 
+	    						"Top Ten Contracts by Disbursement Amount"
+	    						],
+	    						
+	"Total Spending Widget Titles" : [ "Top 5 Checks",
+	    				"Top 5 Vendors",
+	    				"Top 5 Contracts",
+	    				"Top 5 Expense Categories",
+	    				"Spending by Industries",
+	    				"Spending by FundingSource",
+	    				"Top 5 Responsibility Centers"],
+	    				
+	    				
+	"Payroll Spending Visualization Titles" : [ 
+	    						"Payroll Spending Across Years",
+	    						"Payroll Spending",],
+	    						
+	"Payroll Spending Widget Titles" : ["Top Departments",
+	    						"Top Expense Categories"],
+	    				
+	    				
+	"Contract Spending Visualization Titles" : [ "Contracts Spending Across Years",
+	                                       "Contract Spending", 
+	                                       "Top Ten Vendors by Disbursement Amount",
+	    						"Top Ten Contracts by Disbursement Amount"],
+	    						
+	"Contract Spending Widget Titles" : [ "Top 5 Checks",
+	    				"Top 5 Vendors",
+	    				"Top 5 Contracts",
+	    				"Spending by Industries",
+	    				"Spending by FundingSource",
+	    				"Top 5 Expense Categories",
+	    				"Top 5 Responsibility Centers"],
+
+	"Section 8 Spending Visualization Titles" : [ "Section 8 Spending Across Years",
+	                                       "Section 8 Spending", 
+	    							"Top Ten Vendors by Disbursement Amount"],
+	    						
+	"Section 8 Spending Widget Titles" :  [ "Top 5 Checks",
+	    				"Top 5 Vendors",
+	    				"Top 5 Expense Categories",
+	    				"Spending by FundingSource",
+	    				"Top 5 Responsibility Centers"],
+	    						
+	"Other Spending Visualization Titles" : [ "Other Spending Across Years",
+	                                       "Other Spending", 
+	    								"Top Ten Vendors by Disbursement Amount"],
+	    				
+	"Other Spending Widget Titles" :  [ "Top 5 Checks",
+	    				"Top 5 Vendors",
+	    				"Top 5 Expense Categories",
+	    				"Spending by FundingSource",
+	    				"Top 5 Responsibility Centers"]
+}

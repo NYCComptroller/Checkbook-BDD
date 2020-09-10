@@ -1,0 +1,20 @@
+{
+	"Selected Year" : "2018",
+	"Nycha" : "New York City Housing Authority", 
+	
+	"Revenue Visualization Titles" : [ "Expense Budget", 
+	    						            "Fiscal Year Comparisons",
+	    						           "Top Ten Expense Categories by Revenue",
+	    						            "Top Ten Responsibility Centers by Revenue",
+	    						           "Top Ten Funding Sources by Revenue",
+	    						           "Top Ten Programs by Revenue",
+	    						           "Top Ten Projects by Revenue" ],
+	    						
+	"Revenue Widget Titles" : [ "Top 5 Expense Categories",
+	                           "Top 5 Responsibility Centers",
+	    				      "Top 5 Funding Sources",
+	    				      "Top 5 Programs",
+	                          "Top 5 Projects",
+	                          "Top 5 Revenue Categories"
+	    				    ]   								
+	}

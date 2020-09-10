@@ -1,0 +1,22 @@
+{
+	"Selected Year" : "2020",
+	"Nycha" : "New York City Housing Authority", 
+	
+	"Contracts Visualization Titles" : [ "Year Comparison by Agreement Types",
+	                                      "Top Ten Vendors by Current Amount", 
+	    						            "Top Ten Blanket Agreements by Current Amount",
+	    						            "Top Ten Responsibility Centers by Current Amount"],
+	    						
+	"Contracts Widget Titles" : [ "Top 5 Blanket Agreements",
+	    				     "Top 5 Blanket Agreement Modifications",
+	    				     "Top 5 Planned Agreements",
+	    				     "Top 5 Planned Agreement Modifications",
+	    				     "Top 5 Purchase Orders",
+	    				     "Top 5 Vendors",
+	    				     "Top 5 Award Methods",
+	    				     "Top 5 Departments",
+	    				     "Top 5 Responsibility Centers",
+	    				     "Contracts by Industries",
+	    				     "Contracts by Size"]     								
+	
+}

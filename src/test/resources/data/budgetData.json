@@ -1,0 +1,29 @@
+{
+	"Selected Year" : "2020",
+	"Nycha" : "New York City Housing Authority", 
+	
+	"Budget Visualization Titles" : [ "Expense Budget", 
+	    						            "Fiscal Year Comparisons",
+	    						           "Top Ten Expense Categories by Expense Budget",
+	    						            "Top Ten Responsibility Centers by Expense Budget",
+	    						           "Top Ten Funding Sources by Expense Budget",
+	    						           "Top Ten Programs by Expense Budget",
+	    						           "Top Ten Projects by Expense Budget" ],
+	    						
+	"Budget Widget Titles" : [ "Top 5 Expense Categories",
+	                          "Top 5 Expense Categories by Committed Expense Budget",	
+	    				     "Top 5 Expense Categories by Percent Difference",
+	    				      "Top 5 Responsibility Centers",
+	    				     "Top 5 Responsibility Centers by Committed Expense Budget",
+	                          "Top 5 Responsibility Centers by Percent Difference",	
+	    				     "Top 5 Funding Sources",
+	    				      "Top 5 Funding Sources by Committed Expense Budget",
+	    				      "Top 5 Funding Sources by Percent Difference",
+	    				      "Top 5 Programs",
+	                          "Top 5 Programs by Committed Expense Budget",	
+	    				     "Top 5 Programs by Percent Difference",	    	
+	    				     "Top 5 Projects",
+	    				      "Top 5 Projects by Committed Expense Budget",
+	    				      "Top 5 Projects by Percent Difference" ]     								
+	
+}
