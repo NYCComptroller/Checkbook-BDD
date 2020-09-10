@@ -156,6 +156,7 @@ public class CheckbookBasePageObject extends PageObject {
 		List<WebElementFacade> visualizationLinks = findAllElements(By.xpath("//div[contains(@class, 'slider-pager')]/a"));
 		for(WebElement visualizationLink: visualizationLinks){
 			visualizationLink.click();
+			waitForElement(By.xpath("//h2[@class='chart-title']"), 10) ;
 			WebElement titleClass = findElement(By.xpath("//h2[@class='chart-title']"));
 			if(titleClass.isDisplayed()){
 				String title = titleClass.getText();

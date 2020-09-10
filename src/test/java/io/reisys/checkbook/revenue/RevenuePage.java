@@ -22,6 +22,7 @@ public class RevenuePage extends CheckbookBasePageObject {
 	
 	 public void navigateToPayrollPage() {
 		findElement(REVENUE_TAB).click();
+		
 	}
 	 public void navigateToAdvancedSearchSubmit() {
 			findElement(Advanced_Search_Submit).click();

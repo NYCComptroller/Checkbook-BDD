@@ -32,12 +32,12 @@ Feature: Checkbook Advanced Search Nycha Revenue Tab
   Then we should see "Labels" in the form
 @VerifyDefaultValues
 Scenario: Verify all Default Values in the form
-Then "Budget FY" dropdown has "2019" as default value
-And  "Fiscal Year" dropdown has "All Fiscal Years" as default value
-And "Agency" dropdown has "Citywide(All Agencies)" as default value
-And "Funding Class" dropdown has "All Funding Classes" as default value
-And "Revenue Category" dropdown has "All Revenue Categories" as default value
-And "Fund Class" dropdown has "General Fund" as default value
+Then "Budget FY Id" dropdown has "2019" as default value
+And  "Fiscal Year Id" dropdown has "All Fiscal Years" as default value
+And "Agency Id" dropdown has "Citywide(All Agencies)" as default value
+And "Funding Class Id" dropdown has "All Funding Classes" as default value
+And "Revenue Category Id" dropdown has "All Revenue Categories" as default value
+And "Fund Class Id" dropdown has "General Fund" as default value
  
   @PopulateAllFields
   Scenario: Populate All fields in advanced search

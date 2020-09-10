@@ -5,7 +5,7 @@ Feature: Checkbook Nycha Payroll Tab
   Background: 
     Given I navigate to OGE Page
     When I select Nycha from  OGE drop down
-    When I select "Selected Year" for getting data
+    When I select Payroll from top navigation
     
     @NychaPayroll 
   Scenario: Navigate to  Nycha Payroll Tab and Validate Nycha Payroll  Widget Data

@@ -7,6 +7,7 @@ import io.reisys.checkbook.bdd.common.CheckbookBasePageObject;
 public class SpendingPage extends CheckbookBasePageObject {	
 	
 	private static final By SPENDING_TAB = By.xpath("//div[@class='top-navigation-left']//span[text()='Spending']/..");
+	//span[@class='nav-title'][contains(text(),'Spending')]
 	
 	public void navigateToSpendingPage() {
 		findElement(SPENDING_TAB).click();

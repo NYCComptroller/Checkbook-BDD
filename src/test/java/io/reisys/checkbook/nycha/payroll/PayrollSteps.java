@@ -27,6 +27,13 @@ public class PayrollSteps extends CheckbookBaseScenarioSteps {
 		payrollPage.navigateToNYCHAPage();
 			
 	}
+	@When("^I select Payroll from top navigation$")
+	public void navigateToNYCHAPayrollPage()  {
+		payrollPage.navigateToPayrollPage();
+			
+	}
+	
+	
 	
 	
 	/*@And("I navigate to \"([^\"]*)\" Spending sub tab")
@@ -65,10 +72,10 @@ public class PayrollSteps extends CheckbookBaseScenarioSteps {
 		
 	*/
 		//Verify Top 5 Annual Salaries
-				Integer AnnualSalarieswidgetCountDB = DatabaseUtil.getPayrollSalCount(year, 'B');
+				Integer AnnualSalarieswidgetCountDB = DatabaseUtil.getNYCHAPayrollSalCount(year, 'B');
 				assertFieldContainsText("Number of Salaried Employees", payrollPage.getWidgetTotalCount("Salaried Employees") , AnnualSalarieswidgetCountDB.toString());
 				
-				String payrollAmountFromDB = DatabaseUtil.getPayrollAmount(ExecutionContext.getJsonData().get(yearSelected).getAsInt(), 'B');
+				String payrollAmountFromDB = DatabaseUtil.getNYCHAPayrollAmount(ExecutionContext.getJsonData().get(yearSelected).getAsInt(), 'B');
 				assertFieldContainsText("Top Navigation Payroll Amount", payrollPage.getPayrollAmount(), payrollAmountFromDB);
 		
 		softAssertion.assertAll();
@@ -84,7 +91,7 @@ public class PayrollSteps extends CheckbookBaseScenarioSteps {
 		//payrollPage.navigateToWidgetDetails("AnnualSalaries");
 		
 		payrollPage.navigateToWidgetDetails("Salaried Employees");
-		Integer totalChecksWidgetCountFromDB = DatabaseUtil.getPayrollDetailsCount(year,'B');
+		Integer totalChecksWidgetCountFromDB = DatabaseUtil.getNYCHAPayrollDetailsCount(year,'B');
 		assertFieldContainsText("Payroll  Widget Detail Transaction Count", payrollPage.getTotalCountForWidgetDetails() , totalChecksWidgetCountFromDB.toString());
 		assertFieldHasText("Payroll Checks Widget Details Title", payrollPage.getWidgetDetailTitle(), "Payroll Summary by Agency Title");
 	//	assertFieldContainsText("Total Spending Checks Widget Detail Transaction Amount", payrollPage.getTransactionAmount() , PayrollAmount);

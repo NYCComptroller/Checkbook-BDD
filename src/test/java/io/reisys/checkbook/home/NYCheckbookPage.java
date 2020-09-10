@@ -9,7 +9,8 @@ import net.serenitybdd.core.annotations.findby.By;
 public class NYCheckbookPage extends CheckbookBasePageObject {
 
 	public void selectYear(String year) {
-		String yearToSelect = ExecutionContext.getJsonData().get(year).getAsString();
+		//String yearToSelect = ExecutionContext.getJsonData().get(year).getAsString();
+		String yearToSelect = "2018";
 		findElement(By.cssSelector("#year_list_chosen > .chosen-single")).click();
 		//TODO add check to see if the year is already selected
 		
