@@ -40,7 +40,7 @@ public class ADVSpendingSteps extends CheckbookBaseScenarioSteps {
 @Then("^the System displays Citywide Spending Transactions$")
 public void the_System_displays_Nycha_Spending_Transactions() throws Exception {
     // Write code here that turns the phrase above into concrete actions
-	Integer advancedSearchDetailsCountFromDB = DatabaseUtil.getNYCHATotalSpendingAllTransactionCount('B');
+	Integer advancedSearchDetailsCountFromDB = DatabaseUtil.getCitywideTotalSpendingAllTransactionCount('B');
 	assertFieldContainsText("Spending  Advanced Search Default Transaction Count", spendingPage.getTotalCountForAdvancedSearchCitywideSpendingDetails() , advancedSearchDetailsCountFromDB.toString());
 	assertFieldHasText("Spending Advanced search Title", spendingPage.getAdvancedSearchCitywideSpendingDetailsTitle(), "NYCHA Total Spending Transactions");
 //	assertFieldContainsText("Spending  Advanced Search Default Transactions Top navigation Amount", spendingPage.getTransactionAmount() , SpendingAmount);

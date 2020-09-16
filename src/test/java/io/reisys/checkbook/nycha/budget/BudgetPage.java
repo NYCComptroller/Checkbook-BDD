@@ -38,7 +38,7 @@ public class BudgetPage extends CheckbookBasePageObject {
 		String widgetOptionCount = findElement(By.xpath("//span[contains(text(), 'Number of " + widgetOption +"')]")).getText();
 		return widgetOptionCount.substring(widgetOptionCount.indexOf(":") + 1).trim();
 	}
-	public String getWidgetTotalCount2(String widgetOption)
+	public String getWidgetTotalCountId(String widgetOption)
 	{
 		//String widgetOptionCount = findElement(By.xpath("//span[contains(text(), widgetOption)]")).getText();
 		
@@ -51,15 +51,63 @@ public class BudgetPage extends CheckbookBasePageObject {
 	public String getWidgetTotalCount1(String widgetOption)
 	{
 		//String widgetOptionCount = findElement(By.xpath("//span[contains(text(), widgetOption)]")).getText();
-		
 		//String widgetOptionCount=  findElement(By.id("node-widget-expense_categories_percent_difference_2_view")).getText();
-		//String widgetOptionCount1 = findElement(By.xpath("//span[contains(text(), 'Number of " + widgetOption + "')]/../../../../..//a[contains(text(), 'Number')]"));
-		String widgetOptionCount=  findElement(By.xpath("//h2/span[contains(text(), widgetOption)]")).getText();
-		//html/body/h2/text()
-		//System.out.println("Vin is " + vele.getText());
-		
-		return widgetOptionCount.substring(widgetOptionCount.indexOf(":") + 1).trim();
+		//String widgetOptionCount=  findElement(By.xpath("//h2//span[2][contains(text(), widgetOption)]")).getText();
+		String widgetOptionCount=  findElement(By.xpath("//div[@class='panel-pane pane-custom pane-1']//h2[1]")).getText();
+				return widgetOptionCount.substring(widgetOptionCount.indexOf(":") + 1).trim();
 	}
+	public String getWidgetTotalCount2(String widgetOption)
+	{
+				String widgetOptionCount=  findElement(By.xpath("//div[@class='panel-pane pane-custom pane-2']//h2[1]")).getText();
+				return widgetOptionCount.substring(widgetOptionCount.indexOf(":") + 1).trim();
+	}
+	public String getWidgetTotalCount3(String widgetOption)
+	{
+				String widgetOptionCount=  findElement(By.xpath("//div[@class='panel-pane pane-custom pane-3']//h2[1]")).getText();
+				return widgetOptionCount.substring(widgetOptionCount.indexOf(":") + 1).trim();
+	}
+	public String getWidgetTotalCount5(String widgetOption)
+	{
+				String widgetOptionCount=  findElement(By.xpath("//div[@class='panel-pane pane-custom pane-5']//h2[1]")).getText();
+				return widgetOptionCount.substring(widgetOptionCount.indexOf(":") + 1).trim();
+	}
+	public String getWidgetTotalCount6(String widgetOption)
+	{
+				String widgetOptionCount=  findElement(By.xpath("//div[@class='panel-pane pane-custom pane-6']//h2[1]")).getText();
+				return widgetOptionCount.substring(widgetOptionCount.indexOf(":") + 1).trim();
+	}
+	public String getWidgetTotalCount8(String widgetOption)
+	{
+				String widgetOptionCount=  findElement(By.xpath("//div[@class='panel-pane pane-custom pane-8']//h2[1]")).getText();
+				return widgetOptionCount.substring(widgetOptionCount.indexOf(":") + 1).trim();
+	}
+	public String getWidgetTotalCount9(String widgetOption)
+	{
+				String widgetOptionCount=  findElement(By.xpath("//div[@class='panel-pane pane-custom pane-9']//h2[1]")).getText();
+				return widgetOptionCount.substring(widgetOptionCount.indexOf(":") + 1).trim();
+	}
+	public String getWidgetTotalCount11(String widgetOption)
+	{
+				String widgetOptionCount=  findElement(By.xpath("//div[@class='panel-pane pane-custom pane-11']//h2[1]")).getText();
+				return widgetOptionCount.substring(widgetOptionCount.indexOf(":") + 1).trim();
+	}
+	public String getWidgetTotalCount12(String widgetOption)
+	{
+				String widgetOptionCount=  findElement(By.xpath("//div[@class='panel-pane pane-custom pane-12']//h2[1]")).getText();
+				return widgetOptionCount.substring(widgetOptionCount.indexOf(":") + 1).trim();
+	}
+	public String getWidgetTotalCount14(String widgetOption)
+	{
+				String widgetOptionCount=  findElement(By.xpath("//div[@class='panel-pane pane-custom pane-14']//h2[1]")).getText();
+				return widgetOptionCount.substring(widgetOptionCount.indexOf(":") + 1).trim();
+	}
+	public String getWidgetTotalCount15(String widgetOption)
+	{
+				String widgetOptionCount=  findElement(By.xpath("//div[@class='panel-pane pane-custom pane-15']//h2[1]")).getText();
+				return widgetOptionCount.substring(widgetOptionCount.indexOf(":") + 1).trim();
+	}
+	
+	
 	
 
 	public void navigateToWidgetDetails(String widgetOption) {
@@ -82,7 +130,7 @@ public class BudgetPage extends CheckbookBasePageObject {
 		return findElement(By.id("table_1034_info")).getText();
 	}
 	
-	public String getTotalCountForTitlesWidgetDetails() {
+	public String getTotalCountForModWidgetDetails() {
 		return findElement(By.id("table_1046_info")).getText();
 	}
 	
@@ -95,37 +143,4 @@ public class BudgetPage extends CheckbookBasePageObject {
 	}
 	
 	
-	//String widgetOptionCount = findElement(By.xpath("//*[@id=\"node-widget-annual_salaries_agency_view\"]/div[1]/div[1]/h2")).getText();
-		//	+ "[contains(text(), 'Number of \" + widgetOption +\"')]")).getText();
-
-	//WebElement element = WebDriver.findElement(By.xpath(".//div[@class='cf']/h1/a"));
-	//String text = element.getText();
-	//*[@id="node-widget-annual_salaries_agency_view"]/div[1]/div[1]/h2
-			//*[@id="node-widget-annual_salaries_agency_view"]/div[1]/div[1]/h2/text()[2]
-		//String widgetOptionCount = findElement(By.xpath("//span[contains(text(), 'Number of " + widgetOption +"')]")).getText();[@id="node-widget-annual_salaries_agency_view"]/div[1]/div[1]/h2/text()[2]
-		/*
-		public String getWidgetTotalCount(String widgetOption) {
-			String widgetOptionCount = findElement(By.xpath("//h2[contains(text(), 'Top " + widgetOption +"')]")).getText();
-			return widgetOptionCount.substring(widgetOptionCount.indexOf(":") + 1).trim();
-		}
-
-		
-		public String getWidgetTotalCount(String WidgetOption) {
-			//List<WebElement> panelContainers = findElement(By.cssSelector(".bottomContainer > .panel-display > .panel-panel > .inside > .panel-pane"));
-			//List<WebElement> panelContainers = Driver.Instance.findElements(By.cssSelector(".bottomContainer > .panel-display > .panel-panel > div > .panel-pane"));
-				//for (WebElement panelContainer : panelContainers) {
-					WebElement header= findElement(By.tagName("h2"));
-					String subTitle = header.getText().substring(0, header.getText().indexOf("Number")-1);
-					if(subTitle.equalsIgnoreCase(WidgetOption))
-					{	WebElement countContainer = findElement(By.className("contentCount"));
-						String numAgencyText = countContainer.getText();
-				        String numAgency = numAgencyText.substring(numAgencyText.indexOf(":") + 1).trim();
-					
-				        return numAgency;}
-					return subTitle;
-		}
-		
-			*/		
-		
-	
-}
+	}

@@ -60,19 +60,19 @@ public class BudgetSteps extends CheckbookBaseScenarioSteps {
 		
 		//Verify Top 5 Top 5 Expense categories by committed Expense
 		Integer ExpenseCategoriesCEwidgetCountDB = DatabaseUtil.getNYCHABudgetExpenseCategoriesCount(year, 'B');
-		assertFieldContainsText("Number of Expense Categories", budgetPage.getWidgetTotalCount1("Expense Categories by Committed Expense Budget") ,  ExpenseCategoriesCEwidgetCountDB.toString());
+		assertFieldContainsText("Number of Expense Categories", budgetPage.getWidgetTotalCount2("Expense Categories by Committed Expense Budget") ,  ExpenseCategoriesCEwidgetCountDB.toString());
 		//Verify Top 5 Expense categories
-		assertFieldContainsText("Number of Expense Categories", budgetPage.getWidgetTotalCount1("Expense Categories by Percent Difference") , ExpenseCategorieswidgetCountDB.toString());
+		assertFieldContainsText("Number of Expense Categories", budgetPage.getWidgetTotalCount3("Expense Categories by Percent Difference") , ExpenseCategorieswidgetCountDB.toString());
 		
-		
+	
 		//Verify Top 5 Programs
 		Integer ProgramswidgetCountDB = DatabaseUtil.getNYCHABudgetProgramsCount(year, 'B');
 		assertFieldContainsText("Number of Programs", budgetPage.getWidgetTotalCount("Programs") , ProgramswidgetCountDB.toString());
 		//Verify Top 5 Programs by committed Expense
 		Integer ProgramsCEwidgetCountDB = DatabaseUtil.getNYCHABudgetProgramsCount(year, 'B');
-		assertFieldContainsText("Number of Programs", budgetPage.getWidgetTotalCount1("Programs by Committed Expense Budget") , ProgramsCEwidgetCountDB.toString());
+		assertFieldContainsText("Number of Programs", budgetPage.getWidgetTotalCount11("Programs by Committed Expense Budget") , ProgramsCEwidgetCountDB.toString());
 		//Verify Top 5 Programs by Percent Difference
-		assertFieldContainsText("Number of Programs", budgetPage.getWidgetTotalCount1("Programs by Percent Difference") , ProgramswidgetCountDB.toString());
+		assertFieldContainsText("Number of Programs", budgetPage.getWidgetTotalCount12("Programs by Percent Difference") , ProgramswidgetCountDB.toString());
 				
 		
 		//Verify Top 5 Funding sources
@@ -82,11 +82,11 @@ public class BudgetSteps extends CheckbookBaseScenarioSteps {
 						
 		//Verify Top 5 Funding sources Centers by committed Expense
 		Integer FundingSourceCEwidgetCountDB= DatabaseUtil.getNYCHABudgetFundingSourceCount(year, 'B');
-		assertFieldContainsText("Number of Funding sources", budgetPage.getWidgetTotalCount1("Funding Sources by Committed Expense Budget") ,  FundingSourceCEwidgetCountDB.toString());
+		assertFieldContainsText("Number of Funding sources", budgetPage.getWidgetTotalCount8("Funding Sources by Committed Expense Budget") ,  FundingSourceCEwidgetCountDB.toString());
 											
 		//Verify Top 5 Funding sources by Percent Difference
 		
-		assertFieldContainsText("Number of Funding sources", budgetPage.getWidgetTotalCount1("Funding Sources by Percent Difference") , FundingSourcewidgetCountDB.toString());
+		assertFieldContainsText("Number of Funding sources", budgetPage.getWidgetTotalCount9("Funding Sources by Percent Difference") , FundingSourcewidgetCountDB.toString());
 					
 		
 		//Verify Top 5 Responsibility Centers
@@ -96,10 +96,10 @@ public class BudgetSteps extends CheckbookBaseScenarioSteps {
 				
 		//Verify Top 5 Responsibility Centers by committed Expense
 		Integer ResponsibilityCentersCEwidgetCountDB= DatabaseUtil.getNYCHABudgetRespCentersCount(year, 'B');
-		assertFieldContainsText("Number of Responsibility Centers", budgetPage.getWidgetTotalCount1("Responsibility Centers by Committed Expense Budget") ,  ResponsibilityCentersCEwidgetCountDB.toString());
+		assertFieldContainsText("Number of Responsibility Centers", budgetPage.getWidgetTotalCount5("Responsibility Centers by Committed Expense Budget") ,  ResponsibilityCentersCEwidgetCountDB.toString());
 		
 		//Verify Top 5 Responsibility Centers by Percent Difference
-		assertFieldContainsText("Number of Responsibility Centers", budgetPage.getWidgetTotalCount1("Responsibility Centers by Percent Difference") , ResponsibilityCenterswidgetCountDB.toString());
+		assertFieldContainsText("Number of Responsibility Centers", budgetPage.getWidgetTotalCount6("Responsibility Centers by Percent Difference") , ResponsibilityCenterswidgetCountDB.toString());
 		
 		//Verify Top 5 Projects 
 		Integer ProjectswidgetCountDB = DatabaseUtil.getNYCHABudgetProjectsCount(year, 'B');
@@ -107,9 +107,10 @@ public class BudgetSteps extends CheckbookBaseScenarioSteps {
 			
 		//Verify Top 5 Projects by committed Expense
 		Integer ProjectsCEwidgetCountDB = DatabaseUtil.getNYCHABudgetProjectsCount(year, 'B');
-		assertFieldContainsText("Number of Projects", budgetPage.getWidgetTotalCount1("Projects by Committed Expense Budget") , ProjectsCEwidgetCountDB.toString());
+		assertFieldContainsText("Number of Projects", budgetPage.getWidgetTotalCount14("Projects by Committed Expense Budget") , ProjectsCEwidgetCountDB.toString());
 		//Verify Top 5 Projects by Percent Difference
-		assertFieldContainsText("Number of Projects", budgetPage.getWidgetTotalCount1("Projects by Percent Difference") , ProjectswidgetCountDB.toString());
+		assertFieldContainsText("Number of Projects", budgetPage.getWidgetTotalCount15("Projects by Percent Difference") , ProjectswidgetCountDB.toString());
+		
 		
 		softAssertion.assertAll();
 	}

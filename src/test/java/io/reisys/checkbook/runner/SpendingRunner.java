@@ -17,3 +17,4 @@ glue={"io.reisys.checkbook.spending","io.reisys.checkbook.home"}
 public class SpendingRunner {
 
 }
+

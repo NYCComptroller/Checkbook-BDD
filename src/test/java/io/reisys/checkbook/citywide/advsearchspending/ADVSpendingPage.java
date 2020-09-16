@@ -36,10 +36,10 @@ public class ADVSpendingPage extends CheckbookBasePageObject {
 
 	
 	public String getTotalCountForAdvancedSearchCitywideSpendingDetails() {
-		return findElement(By.id("table_1012_info")).getText();
+		return findElement(By.id("table_766_info")).getText();
 	}
 	public String getAdvancedSearchCitywideSpendingDetailsTitle() {
-		return findElement(By.className("contract-title")).getText();
+		return findElement(By.className("title")).getText();
 	}
 	
 }
