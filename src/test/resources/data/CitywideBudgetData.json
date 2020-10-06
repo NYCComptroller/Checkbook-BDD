@@ -1,0 +1,16 @@
+{
+	"Selected Year" : "2018",
+	
+	"Budget Visualization Titles" : [ "Expense Budget", 
+	    						"Fiscal Year Comparisons", 
+	    						"Top Ten Expense Categories by Expense Budget", 
+	    						"Top Ten Agencies by Expense Budget"],
+	    						
+	"Budget Widget Titles" : [   "Top 5 Agencies",
+	    				"Top 5 Agencies by Committed Expense Budget",
+	    				"Top 5 Agencies by Percent Difference",
+	    				"Top 5 Expense Categories",
+	    				"Top 5 Expense Categories by Committed Expense Budget",
+	    				"Top 5 Expense Categories by Percent Difference"]   		
+	
+}

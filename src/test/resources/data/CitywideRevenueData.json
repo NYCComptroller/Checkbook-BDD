@@ -1,0 +1,14 @@
+{
+	"Selected Year" : "2018",
+	
+	"Revenue Visualization Titles" : [ "Revenue", 
+	    						"Fiscal Year Comparisons", 
+	    						"Top Ten Agencies by Revenue", 
+	    						"Top Ten Revenue Categories by Revenue"],
+	    						
+	"Revenue Widget Titles" : [   "Top 5 Agencies",
+	    				"Top 5 Revenue Categories",
+	    				"Revenue by Funding Classes"]   				
+	 		
+	
+}
