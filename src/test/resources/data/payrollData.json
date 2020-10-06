@@ -1,13 +1,14 @@
 {
-	"Selected Year" : "2020",
-	"Nycha" : "New York City Housing Authority", 
-	
+	"Selected Year" : "2018",
+		
 	"Payroll Visualization Titles" : [ "Gross Pay by Month", 
-	    						            "Overtime Payments by Month"],
+	    						            "Overtime Payments by Month",
+	    						            "Top Ten Agencies by Gross YTD",
+	    						            "Top Ten Agencies by Total Overtime"],
 	    						
-	"Payroll Widget Titles" : [ "Top 5 Annual Salaries",
-	                          "Top 5 Non-Salaried Rates",	
-	    				     "Top 5 Titles by Number of Salaried Employees",
-	    				      "Top 5 Titles by Number of Non-Salaried Employees"]     								
+	"Payroll Widget Titles" : [ "Top 5 Agencies by Payroll",
+	                          "Top 5 Agencies by Overtime",	
+	    				     "Top 5 Annual Salaries",
+	    				      "Top 5 Titles by Number of Employees"]     								
 	
 }

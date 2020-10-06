@@ -2141,6 +2141,7 @@ public class DatabaseUtil {
 
 	public static int getPayrollAgenciesCount(int year, char yearTypeVal) throws SQLException {
 		query = "SELECT COUNT(Distinct(agency_id)) aCount " + "FROM  payroll where fiscal_year= " + year;
+		query2 = "SELECT COUNT(Distinct(agency_id)) aCount " + "FROM  payroll where calendar_fiscal_year= " + year;
 
 		rs = amountQueryHelper(yearTypeVal);
 		int count = 0;
@@ -2158,6 +2159,13 @@ public class DatabaseUtil {
 				+ year + " GROUP BY employee_number,fiscal_year )"
 				+ "latest_emp ON latest_emp.pay_date = emp.pay_date AND latest_emp.employee_number = emp.employee_number AND latest_emp.fiscal_year = emp.fiscal_year and emp.amount_basis_id =1 ) a";
 
+		
+		query2 = "SELECT COUNT(Distinct employee_number) aCount from ("
+				+ "SELECT latest_emp.employee_number,latest_emp.pay_date,latest_emp.fiscal_year, emp.amount_basis_id FROM "
+				+ "Payroll emp JOIN ( SELECT max(pay_date) as pay_date, employee_number,calendar_fiscal_year FROM payroll where calendar_fiscal_year = "
+				+ year + " GROUP BY employee_number,calendar_fiscal_year )"
+				+ "latest_emp ON latest_emp.pay_date = emp.pay_date AND latest_emp.employee_number = emp.employee_number AND latest_emp.calendar_fiscal_year = emp.calendar_fiscal_year and emp.amount_basis_id =1 ) a";
+
 		/*
 		 * query = "SELECT COUNT(Distinct(employee_number)) aCount " +
 		 * "FROM  payroll where fiscal_year= " + year ;
@@ -2173,6 +2181,7 @@ public class DatabaseUtil {
 	public static String getPayrollAmount(int year, char yearTypeVal) throws SQLException {
 		query = "SELECT sum(gross_pay)  sumPayrollAmt " + "FROM Payroll" + " WHERE fiscal_year = " + year;
 
+		query2 = "SELECT sum(gross_pay)  sumPayrollAmt " + "FROM Payroll" + " WHERE calendar_fiscal_year = " + year;
 		rs = amountQueryHelper(yearTypeVal);
 
 		BigDecimal totalPayrollAmount = new BigDecimal(0);
@@ -2213,6 +2222,11 @@ public class DatabaseUtil {
 				+ "sum(other_payments) as other_payments_ytd ,sum(overtime_pay) as overtime_pay_ytd "
 				+ "FROM payroll WHERE fiscal_year = " + year + " and amount_basis_id in (1) group by 1 ) a";
 
+
+		query2 = "select count(*) aCount from ("
+				+ "SELECT civil_service_title,count(distinct employee_ID),sum(gross_pay) as gross_pay_ytd ,sum(base_pay) as base_pay_ytd,"
+				+ "sum(other_payments) as other_payments_ytd ,sum(overtime_pay) as overtime_pay_ytd "
+				+ "FROM payroll WHERE calendar_fiscal_year = " + year + " and amount_basis_id in (1) group by 1 ) a";
 		rs = amountQueryHelper(yearTypeVal);
 		int count = 0;
 		while (rs.next()) {
@@ -2537,8 +2551,8 @@ public class DatabaseUtil {
 	public static int getAEContractsAgenciesCount(int year, char yearTypeVal) throws SQLException {
 		query = "select  count(distinct agency_id ) aCount  from agreement_snapshot"
 				+ "   where  document_code_id in (1,2,5) "
-				+ "and (2016 between effective_begin_year and effective_end_year)"
-				+ "and (2016 between starting_year and ending_year)";
+				+ "and (" + year + "  between effective_begin_year and effective_end_year)"
+				+ "and (" + year + "  between starting_year and ending_year)";
 		rs = amountQueryHelper(yearTypeVal);
 		int count = 0;
 		while (rs.next()) {
@@ -2550,8 +2564,8 @@ public class DatabaseUtil {
 	public static int getAEContractsPrimeVendorsCount(int year, char yearTypeVal) throws SQLException {
 		query = "select  count(distinct vendor_id ) aCount  from agreement_snapshot"
 				+ "   where  document_code_id in (1,2,5) "
-				+ "and (2016 between effective_begin_year and effective_end_year)"
-				+ "and (2016 between starting_year and ending_year)";
+				+ "and (" + year + "  between effective_begin_year and effective_end_year)"
+				+ "and (" + year + " between starting_year and ending_year)";
 		rs = amountQueryHelper(yearTypeVal);
 		int count = 0;
 		while (rs.next()) {
@@ -2563,8 +2577,8 @@ public class DatabaseUtil {
 	public static int getAEContractsAwardMethodsCount(int year, char yearTypeVal) throws SQLException {
 		query = "select  count(distinct award_method_id ) aCount  from agreement_snapshot"
 				+ "   where  document_code_id in (1,2,5) "
-				+ "and (2016 between effective_begin_year and effective_end_year)"
-				+ "and (2016 between starting_year and ending_year)";
+				+ "and (" + year + "  between effective_begin_year and effective_end_year)"
+				+ "and (" + year + "  between starting_year and ending_year)";
 		rs = amountQueryHelper(yearTypeVal);
 		int count = 0;
 		while (rs.next()) {
@@ -2576,8 +2590,8 @@ public class DatabaseUtil {
 	public static int getAEContractsIndustriesCount(int year, char yearTypeVal) throws SQLException {
 		query = "select  count(distinct contract_number ) aCount  from agreement_snapshot"
 				+ "   where  document_code_id in (1,2,5) "
-				+ "and (2016 between effective_begin_year and effective_end_year)"
-				+ "and (2016 between starting_year and ending_year)";
+				+ "and (" + year + "  between effective_begin_year and effective_end_year)"
+				+ "and (" + year + "  between starting_year and ending_year)";
 		rs = amountQueryHelper(yearTypeVal);
 		int count = 0;
 		while (rs.next()) {
@@ -2589,8 +2603,8 @@ public class DatabaseUtil {
 	public static int getAEContractsSizeCount(int year, char yearTypeVal) throws SQLException {
 		query = "select  count(distinct contract_number ) aCount  from agreement_snapshot"
 				+ "   where  document_code_id in (1,2,5) "
-				+ "and (2016 between effective_begin_year and effective_end_year)"
-				+ "and (2016 between starting_year and ending_year)";
+				+ "and (" + year + "  between effective_begin_year and effective_end_year)"
+				+ "and (" + year + "  between starting_year and ending_year)";
 		rs = amountQueryHelper(yearTypeVal);
 		int count = 0;
 		while (rs.next()) {
@@ -2602,8 +2616,8 @@ public class DatabaseUtil {
 	public static int getAEContractsCount(int year, char yearTypeVal) throws SQLException {
 		query = "select  count(distinct contract_number ) aCount  from agreement_snapshot"
 				+ "   where  document_code_id in (1,2) "
-				+ "and (2016 between effective_begin_year and effective_end_year)"
-				+ "and (2016 between starting_year and ending_year)";
+				+ "and (" + year + "  between effective_begin_year and effective_end_year)"
+				+ "and (" + year + "  between starting_year and ending_year)";
 		rs = amountQueryHelper(yearTypeVal);
 		int count = 0;
 		while (rs.next()) {
@@ -2615,8 +2629,8 @@ public class DatabaseUtil {
 	public static int getAEMasterContractsCount(int year, char yearTypeVal) throws SQLException {
 		query = "select  count(distinct contract_number ) aCount  from agreement_snapshot"
 				+ "   where  document_code_id in (5,6) "
-				+ "and (2016 between effective_begin_year and effective_end_year)"
-				+ "and (2016 between starting_year and ending_year)";
+				+ "and ( " + year + "  between effective_begin_year and effective_end_year)"
+				+ "and (" + year + "  between starting_year and ending_year)";
 		rs = amountQueryHelper(yearTypeVal);
 		int count = 0;
 		while (rs.next()) {
@@ -2628,8 +2642,8 @@ public class DatabaseUtil {
 	public static int getAEMasterContractsModificationCount(int year, char yearTypeVal) throws SQLException {
 		query = "select  count(distinct contract_number ) aCount  from agreement_snapshot"
 				+ "   where  document_code_id in (5,6) "
-				+ "and (2016 between effective_begin_year and effective_end_year)"
-				+ "and (2016 between starting_year and ending_year)"
+				+ "and (" + year + "  between effective_begin_year and effective_end_year)"
+				+ "and (" + year + " between starting_year and ending_year)"
 				+ "and maximum_contract_amount <> original_contract_amount";
 		rs = amountQueryHelper(yearTypeVal);
 		int count = 0;
@@ -2642,8 +2656,8 @@ public class DatabaseUtil {
 	public static int getAEContractsModificationCount(int year, char yearTypeVal) throws SQLException {
 		query = "select  count(distinct contract_number ) aCount  from agreement_snapshot"
 				+ "   where  document_code_id in (1,2) "
-				+ "and (2016 between effective_begin_year and effective_end_year)"
-				+ "and (2016 between starting_year and ending_year)"
+				+ "and (" + year + "  between effective_begin_year and effective_end_year)"
+				+ "and (" + year + "  between starting_year and ending_year)"
 				+ "and maximum_contract_amount <> original_contract_amount";
 		rs = amountQueryHelper(yearTypeVal);
 		int count = 0;
@@ -4873,7 +4887,23 @@ public class DatabaseUtil {
 				}
 			//NYCEDC Spending	
 				public static int getNYCEDCTotalSpendingAllTransactionCount(char yearTypeVal) throws SQLException {
-					query = "SELECT COUNT(*) aCount from all_disbursement_transactions where agency_id ='9000'";
+					query = "select COUNT(*) aCount from  disbursement_line_item_details";
+					// query2 = "SELECT COUNT(*) aCount from disbursement_line_item_details where
+					// fiscal_year =" + year ;
+
+							rs = amountQueryHelper(yearTypeVal);
+					int count = 0;
+					while (rs.next()) {
+						count = rs.getInt("aCount");
+					}
+					return count;
+				}
+				
+				public static int getNYCEDCTotalSpendingTransactionCount(int year, char yearTypeVal) throws SQLException {
+					// query = "SELECT COUNT(*) aCount " +
+					// "FROM payroll where fiscal_year= " + year ;
+
+					query = "select COUNT(*) aCount from  disbursement_line_item_details where fiscal_year = " + year;
 					// query2 = "SELECT COUNT(*) aCount from disbursement_line_item_details where
 					// fiscal_year =" + year ;
 
@@ -4899,6 +4929,92 @@ public class DatabaseUtil {
 					return count;
 				}
 				
+				//NYCEDC Contracts	
+				public static int getNYCEDCAEContractsAllTransactionCount(char yearTypeVal) throws SQLException {
+					query = "SELECT COUNT(*) aCount  from contracts_detailed_transactions where " 
+							+ "latest_flag ='Y' and status_flag ='A' and type_of_year ='B' and if_for_all_years ='Y' and is_vendor_flag ='N'";
+					// query2 = "SELECT COUNT(*) aCount from disbursement_line_item_details where
+					// fiscal_year =" + year ;
+
+							rs = amountQueryHelper(yearTypeVal);
+					int count = 0;
+					while (rs.next()) {
+						count = rs.getInt("aCount");
+					}
+					return count;
+				}
 				
+				//Citywide  Contracts	
+				public static int getCitywideAEContractsAllTransactionCount(char yearTypeVal) throws SQLException {
+					query = "select count(*) aCount from all_agreement_transactions_by_prime_sub_vendor " 
+							+ "where latest_flag ='Y' and is_active_eft_2011 ='1' and document_code_id in (1,2,3,4,5,6,7)";
+					// query2 = "SELECT COUNT(*) aCount from disbursement_line_item_details where
+					// fiscal_year =" + year ;
+
+							rs = amountQueryHelper(yearTypeVal);
+					int count = 0;
+					while (rs.next()) {
+						count = rs.getInt("aCount");
+					}
+					return count;
+				}
+				
+				
+				//Citywide  Budget	
+				public static int getCitywideBudgetTransactionCount(char yearTypeVal) throws SQLException {
+					query = "select count(*) aCount from budget where budget_fiscal_year ='2021'";
+					// query2 = "SELECT COUNT(*) aCount from disbursement_line_item_details where
+					// fiscal_year =" + year ;
+
+							rs = amountQueryHelper(yearTypeVal);
+					int count = 0;
+					while (rs.next()) {
+						count = rs.getInt("aCount");
+					}
+					return count;
+				}
+				
+				
+				
+				//Citywide  Revenue
+				public static int getCitywideRevenueTransactionCount(char yearTypeVal) throws SQLException {
+					query = "select count(*) aCount from revenue where budget_fiscal_year ='2021'";
+					// query2 = "SELECT COUNT(*) aCount from disbursement_line_item_details where
+					// fiscal_year =" + year ;
+
+							rs = amountQueryHelper(yearTypeVal);
+					int count = 0;
+					while (rs.next()) {
+						count = rs.getInt("aCount");
+					}
+					return count;
+				}
+				
+				public static int getCitywideRevenueAllTransactionCount(char yearTypeVal) throws SQLException {
+					query = "select count(*) aCount from revenue";
+					// query2 = "SELECT COUNT(*) aCount from disbursement_line_item_details where
+					// fiscal_year =" + year ;
+
+							rs = amountQueryHelper(yearTypeVal);
+					int count = 0;
+					while (rs.next()) {
+						count = rs.getInt("aCount");
+					}
+					return count;
+				}
+				
+				//Citywide  Payroll
+				public static int getCitywidePayrollTransactionCount(char yearTypeVal) throws SQLException {
+					query2 = "select count(*) aCount from payroll where calendar_fiscal_year ='2020'";
+					// query2 = "SELECT COUNT(*) aCount from disbursement_line_item_details where
+					// fiscal_year =" + year ;
+
+							rs = amountQueryHelper(yearTypeVal);
+					int count = 0;
+					while (rs.next()) {
+						count = rs.getInt("aCount");
+					}
+					return count;
+				}
 }
 

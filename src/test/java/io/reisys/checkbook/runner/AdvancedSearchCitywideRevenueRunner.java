@@ -6,15 +6,15 @@ import cucumber.api.CucumberOptions;
 import io.reisys.checkbook.bdd.cucumber.JsonDataSerenityRunner;
 import io.reisys.checkbook.bdd.cucumber.TestDataFile;
 
-@CucumberOptions(plugin = { "pretty" , "html:target/AdvancedSearchRunner.html" },
-tags = {"@PopulateRevenueAdvancedSearch", "not @wip"},
-features = { "src/test/resources/features/AdvancedSearch/AdvancedSearchRevenue.feature"},
-glue={"io.reisys.checkbook.revenue"}
+@CucumberOptions(plugin = { "pretty" , "html:target/RevenueAdvancedSearchRunner.html" },
+tags = {"@AdvancedSearchaCitywideRevenue", "not @wip"},
+features = { "src/test/resources/features/CitywideRevenue/AdvancedSearchCitywideRevenue.feature"},
+glue={"io.reisys.checkbook.citywide.advsearchrevenue"}
 
 )
 @TestDataFile(files = { "src/test/resources/data/revenueData.json"
 						})
 @RunWith(JsonDataSerenityRunner.class)
-public class AdvancedSearchRevenueRunner {
+public class AdvancedSearchCitywideRevenueRunner {
 
 }

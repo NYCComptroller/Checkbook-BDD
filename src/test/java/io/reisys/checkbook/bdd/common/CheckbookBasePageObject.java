@@ -154,9 +154,9 @@ public class CheckbookBasePageObject extends PageObject {
     public ArrayList<String> getVisualizationTitles() {
 		ArrayList<String> titles = new ArrayList<String>();
 		List<WebElementFacade> visualizationLinks = findAllElements(By.xpath("//div[contains(@class, 'slider-pager')]/a"));
-		for(WebElement visualizationLink: visualizationLinks){
+		for(WebElement visualizationLink: visualizationLinks){                //a[@class='activeSlide'][contains(text(),'4')]
 			visualizationLink.click();
-			waitForElement(By.xpath("//h2[@class='chart-title']"), 10) ;
+			waitForElement(By.xpath("//h2[@class='chart-title']"), 5) ;
 			WebElement titleClass = findElement(By.xpath("//h2[@class='chart-title']"));
 			if(titleClass.isDisplayed()){
 				String title = titleClass.getText();
@@ -166,6 +166,28 @@ public class CheckbookBasePageObject extends PageObject {
 		return titles;
 	}
     
+    /*
+    public static ArrayList<String> VisualizationTitles1() {
+ 			ArrayList<String> titles = new ArrayList<String>();
+ 			List<WebElementFacade> titleContainers = findAllElements(By.cssSelector("#nyc-spending > .top-chart > .inside > .panel-pane"));
+ 		
+ 			for(int i=0; i < titleContainers.size(); i++){
+ 				selectVisualizationSlider(i);
+ 				WebElement titleClass = titleContainers.get(i).findElement(By.cssSelector(".pane-content .chart-title"));
+ 				if(titleClass.isDisplayed()){
+ 					String title = titleClass.getText();
+ 					titles.add(title);
+ 				}
+ 			}	
+ 			return titles;
+ 		}	public static void selectVisualizationSlider(int sliderPosition){
+			List<WebElementFacade> sliderContainer = findAllElements(By.cssSelector("#nyc-spending > .top-chart > .slider-pager > a"));
+			sliderContainer.get(sliderPosition).click();
+			
+		}*/
+		
+	
+
 	public ArrayList<String> getWidgetTitles() {
 		ArrayList<String> titles = new ArrayList<String>();
 		List<WebElementFacade> titleContainers = findAllElements(By.className("tableHeader"));

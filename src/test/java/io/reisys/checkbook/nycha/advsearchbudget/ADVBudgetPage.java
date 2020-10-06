@@ -47,7 +47,8 @@ public class ADVBudgetPage extends CheckbookBasePageObject {
 		return findElement(By.id("table_1034_info")).getText();
 	}
 	public String getAdvancedSearchOGEBudgetDetailsTitle() {
-		return findElement(By.className("title")).getText();
+	 return findElement(By.className("title")).getText().substring(0,7);
+		
 	}
 	
 

@@ -22,7 +22,7 @@ public class ADVBudgetSteps extends CheckbookBaseScenarioSteps {
 	NYCheckbookPage homePage;
 	ADVBudgetPage budgetPage;
 	
-	@Given("^I navigate to Advanced Search Budget OGE Page$")
+	@Given("^I navigate to Advanced Search Budget NYCHA form Page$")
 	public void navigateToAdvancedSearchbudgetFormPage() {
 		    homePage.open();
 				budgetPage.navigateToOGEPage();

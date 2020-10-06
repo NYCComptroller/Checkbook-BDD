@@ -4,6 +4,7 @@ package io.reisys.checkbook.spending;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import io.reisys.checkbook.bdd.common.CheckbookBaseScenarioSteps;
 import io.reisys.checkbook.bdd.cucumber.ExecutionContext;
 import io.reisys.checkbook.home.NYCheckbookPage;
@@ -20,7 +21,11 @@ public class SpendingSteps extends CheckbookBaseScenarioSteps {
 		homePage.open();
 		spendingPage.navigateToSpendingPage();
 	}
-	
+	//   @When("^I select \"([^\"]*)\" for getting data$")
+		
+	//	public void selectYear(String year) {
+	//		homePage.selectYear(year);
+		//}
 	@And("I navigate to \"([^\"]*)\" Spending sub tab")
 	public void navigateToSubTab(String subTabType) {
 		spendingPage.navigateToSubTabType(subTabType);
@@ -83,8 +88,7 @@ public class SpendingSteps extends CheckbookBaseScenarioSteps {
 		assertFieldContainsText("Total Spending Checks Widget Detail Transaction Count", spendingPage.getTotalCountForWidgetDetails() , totalChecksWidgetCountFromDB.toString());
 		assertFieldHasText("Total Spending Checks Widget Details Title", spendingPage.getWidgetDetailTitle(), "Checks Total Spending Transactions");
 		assertFieldContainsText("Total Spending Checks Widget Detail Transaction Amount", spendingPage.getTransactionAmount() , totalSpendingAmount);
-		spendingPage.navigateToSubTabType("Total");
-		
+		spendingPage.navigateToSubTabType("Total");		
 		
 		//Verify Total Agencies Widget Details
 		spendingPage.navigateToWidgetDetails("Agencies");

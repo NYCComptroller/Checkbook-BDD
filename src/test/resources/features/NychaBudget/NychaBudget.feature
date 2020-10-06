@@ -9,9 +9,10 @@ Feature: Checkbook Nycha Budget Tab
     
     @NychaBudget 
   Scenario: Navigate to  Nycha Budget Tab and Validate Nycha Budget  Widget Data
-    Then the System displays Nycha Budget  Widget and Visualization titles for "Selected Year"
-  And the System displays  Nycha Budget  Widget counts and Top nav amount for "Selected Year"
- And the System displays  Nycha Budget  Widgets Details Information for "Selected Year"
+  
+   Then the System displays Nycha Budget  Widget and Visualization titles for "Selected Year"
+   And the System displays  Nycha Budget  Widget counts and Top nav amount for "Selected Year"
+   And the System displays  Nycha Budget  Widgets Details Information for "Selected Year"
     
 
     

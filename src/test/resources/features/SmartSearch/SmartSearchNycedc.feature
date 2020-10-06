@@ -1,15 +1,14 @@
-@AdvancedSearchPayroll
-Feature: Checkbook Advanced search Payroll
-  As a user I want to go to Advanced search Payroll Tab so that I can search and get the Payroll transactions
+@SmartSearch 
+Feature: Checkbook Smart Search NYCEDC
+  As a user I want to go to Smart Search NYCEDC so that I can search and get the NYCEDC transactions
 
   Background: 
-    Given I navigate to Advanced search form Page
-    When I select Payroll from  Advanced search
+    Given I navigate to NYCEDC Smart Search Page
     When I click on Submit
-      
-    @AdvancedSearchPayroll    
-   Scenario: Navigate to   Advanced search Payroll domain form and verify default Transactions  
+          
+    @SmartSearchNycedc    
+   Scenario: Navigate to Smart Search NYCEDC results Page and verify default Transactions  
     
-   Then the System displays Payroll Transactions for "Selected Year"    
-  
+   Then the System displays NYCEDC Transactions
+   Then the System displays NYCEDC Spending Transactions
      
