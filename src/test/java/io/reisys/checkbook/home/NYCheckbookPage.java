@@ -1,9 +1,7 @@
 package io.reisys.checkbook.home;
 
 import org.openqa.selenium.WebElement;
-
 import io.reisys.checkbook.bdd.common.CheckbookBasePageObject;
-import io.reisys.checkbook.bdd.cucumber.ExecutionContext;
 import net.serenitybdd.core.annotations.findby.By;
 
 public class NYCheckbookPage extends CheckbookBasePageObject {

@@ -4,7 +4,6 @@ package io.reisys.checkbook.spending;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 import io.reisys.checkbook.bdd.common.CheckbookBaseScenarioSteps;
 import io.reisys.checkbook.bdd.cucumber.ExecutionContext;
 import io.reisys.checkbook.home.NYCheckbookPage;

@@ -1,10 +1,6 @@
 package io.reisys.checkbook.nycha.contracts;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-
-
 import io.reisys.checkbook.bdd.common.CheckbookBasePageObject;
 
 public class ContractsPage extends CheckbookBasePageObject {	

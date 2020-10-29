@@ -1,7 +1,6 @@
 package io.reisys.checkbook.spending;
 
 import org.openqa.selenium.By;
-
 import io.reisys.checkbook.bdd.common.CheckbookBasePageObject;
 
 public class SpendingPage extends CheckbookBasePageObject {	

@@ -1,9 +1,7 @@
 package io.reisys.checkbook.payroll;
 
 import org.openqa.selenium.By;
-
 import org.openqa.selenium.support.ui.Select;
-
 import io.reisys.checkbook.bdd.common.CheckbookBasePageObject;
 
 public class PayrollPage extends CheckbookBasePageObject {	

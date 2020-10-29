@@ -10,7 +10,6 @@ import io.reisys.checkbook.bdd.cucumber.ExecutionContext;
 import io.reisys.checkbook.home.NYCheckbookPage;
 import io.reisys.checkbook.utilities.CommonUtility;
 import io.reisys.checkbook.utilities.DatabaseUtil;
-import io.reisys.checkbook.utilities.DatabaseUtil2;
 
 public class ContractsSteps extends CheckbookBaseScenarioSteps {
 	

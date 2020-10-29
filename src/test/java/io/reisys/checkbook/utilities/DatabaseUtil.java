@@ -11,7 +11,6 @@ import java.util.Calendar;
 import java.util.Map;
 import java.util.Properties;
 import java.util.TreeMap;
-
 import net.thucydides.core.util.EnvironmentVariables;
 import net.thucydides.core.util.SystemEnvironmentVariables;
 
