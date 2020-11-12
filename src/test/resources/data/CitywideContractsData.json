@@ -29,7 +29,36 @@
 	    				"Top 5 Award Methods",
 	    				"Top 5 Agencies",
 	    				"Contracts by Industries",
-	    				"Contracts by Size"] 				
+	    				"Contracts by Size"] ,
+	    				
+	  "Year" : "CY 2019",
+	"Agency":"Administration for C...",
+	"Salaried Type" :"All",
+	"Pay Frequency":"BI-WEEKLY",
+	"Title":"CHILD PROTECTIVE SPECIALIST",	
+	"Base Pay From":"0",
+	"Base Pay To":"1000000",
+	"Overtime Payments From":"0",
+	"Overtime Payments To":"2000000",
+	"Other Payments From":"0",
+	"Other Payments To":"500000",
+	
+	"Gross Pay YTD From":"0",
+	"Gross Pay YTD To":"1000000",
+	"Gross Pay From":"0",
+	"Gross Pay To":"2000000",
+	"Amount From":"0",
+	"Amount To":"500000",
+	"Pay Date From":"2020-01-01",
+	"Pay Date To":"2020-12-01",
+	
+	"Labels":["Payroll Year Id","Agency Id","Title Id","Pay Frequency Id","Salaried Type Id"],
+	"Payroll Year Id":"edit-payroll-year",
+	"Agency Id":"edit-checkbook-payroll-agencies",
+	"Pay Frequency Id":"edit-payroll-pay-frequency",
+	"Title Id":"edit-payroll-employee-name",	
+	"Salaried Type Id":"edit-payroll-amount-type-0"								
+					
 	    		
 	
 }

@@ -26,13 +26,17 @@ Feature: Checkbook Advanced Search Nycha Revenue Tab
   When I enter modified field range from "Modified From" to "Modified To" 
   When I enter recognized field range from "Recognized From" to "Recognized To"
   And  I click on Submit button for revenue domain
-  Then  the System displays Revenue Transactions for "Selected Year"  
+  Then  the System displays Revenue Transactions for "Selected Year" 
+   
   @VerifyLabelFields
+  
   Scenario: Verify all labels in Revenue advanced search
   Then we should see "Labels" in the form
+  
 @VerifyDefaultValues
+
 Scenario: Verify all Default Values in the form
-Then "Budget FY Id" dropdown has "2019" as default value
+Then "Budget FY Id" dropdown has "2021" as default value
 And  "Fiscal Year Id" dropdown has "All Fiscal Years" as default value
 And "Agency Id" dropdown has "Citywide(All Agencies)" as default value
 And "Funding Class Id" dropdown has "All Funding Classes" as default value
@@ -40,6 +44,7 @@ And "Revenue Category Id" dropdown has "All Revenue Categories" as default value
 And "Fund Class Id" dropdown has "General Fund" as default value
  
   @PopulateAllFields
+  
   Scenario: Populate All fields in advanced search
   When I enter adopted field range from "Adopted From" to "Adopted To" 
   When I enter modified field range from "Modified From" to "Modified To" 

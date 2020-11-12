@@ -33,7 +33,21 @@ public class ADVRevenuePage extends CheckbookBasePageObject {
 
 	
 	public String getTotalCountForAdvancedSearchCitywideRevenueDetails() {
-		return findElement(By.id("table_280_info")).getText();
+		//return findElement(By.id("table_280_info")).getText();
+		String numCountText = findElement(By.id("table_280_info")).getText();
+       // String numCount = numCountText.substring(numCountText.indexOf("f") + 1).trim();   
+           
+        String numCount1 = numCountText.substring(numCountText.indexOf("f") + 1, numCountText.indexOf("e")).trim();
+        String numCount2 = numCount1.replace(",", "");
+        
+        String numCount3 = numCountText.substring(numCountText.indexOf("m") + 1, numCountText.indexOf("t")).trim();
+        String numCount4 = numCount3.replace(",", "");
+        if (Integer.parseInt(numCount2) <= 200000)
+        return numCount2;
+        else 
+        	return numCount4;
+        	
+        	
 		
 	}
 	public String getAdvancedSearchCitywideRevenueDetailsTitle() {

@@ -36,49 +36,11 @@ public class RevenuePage extends CheckbookBasePageObject {
 	public void navigateToAdvancedSearchPage() {
 		findElement(Advanced_Search).click();
 	}
-	
-		
-
-	
+			
 	public String getWidgetTotalCount(String widgetOption) {
 		String widgetOptionCount = findElement(By.xpath("//span[contains(text(), 'Number of " + widgetOption +"')]")).getText();
 		return widgetOptionCount.substring(widgetOptionCount.indexOf(":") + 1).trim();
-	}
-	//String widgetOptionCount = findElement(By.xpath("//*[@id=\"node-widget-annual_salaries_agency_view\"]/div[1]/div[1]/h2")).getText();
-	//	+ "[contains(text(), 'Number of \" + widgetOption +\"')]")).getText();
-
-//WebElement element = WebDriver.findElement(By.xpath(".//div[@class='cf']/h1/a"));
-//String text = element.getText();
-//*[@id="node-widget-annual_salaries_agency_view"]/div[1]/div[1]/h2
-		//*[@id="node-widget-annual_salaries_agency_view"]/div[1]/div[1]/h2/text()[2]
-	//String widgetOptionCount = findElement(By.xpath("//span[contains(text(), 'Number of " + widgetOption +"')]")).getText();[@id="node-widget-annual_salaries_agency_view"]/div[1]/div[1]/h2/text()[2]
-	/*
-	public String getWidgetTotalCount(String widgetOption) {
-		String widgetOptionCount = findElement(By.xpath("//h2[contains(text(), 'Top " + widgetOption +"')]")).getText();
-		return widgetOptionCount.substring(widgetOptionCount.indexOf(":") + 1).trim();
-	}
-
-	
-	public String getWidgetTotalCount(String WidgetOption) {
-		//List<WebElement> panelContainers = findElement(By.cssSelector(".bottomContainer > .panel-display > .panel-panel > .inside > .panel-pane"));
-		//List<WebElement> panelContainers = Driver.Instance.findElements(By.cssSelector(".bottomContainer > .panel-display > .panel-panel > div > .panel-pane"));
-			//for (WebElement panelContainer : panelContainers) {
-				WebElement header= findElement(By.tagName("h2"));
-				String subTitle = header.getText().substring(0, header.getText().indexOf("Number")-1);
-				if(subTitle.equalsIgnoreCase(WidgetOption))
-				{	WebElement countContainer = findElement(By.className("contentCount"));
-					String numAgencyText = countContainer.getText();
-			        String numAgency = numAgencyText.substring(numAgencyText.indexOf(":") + 1).trim();
-				
-			        return numAgency;}
-				return subTitle;
-	}
-	
-		*/		
-	
-	
-
-	
+	}	
 
 	public void navigateToWidgetDetails(String widgetOption) {
 		waitForElement(By.xpath("//span[contains(text(), 'Number of " + widgetOption + "')]"), 60);
@@ -95,8 +57,7 @@ public class RevenuePage extends CheckbookBasePageObject {
 		waitForElementToDisappear(By.id("table_886_processing"));
 		waitForElement(By.id("table_886_wrapper"), 60);
 		
-			}
-	
+			}	
 	public String getTotalCountForWidgetDetails() {
 		return findElement(By.id("table_317_info")).getText();
 	}
@@ -104,10 +65,10 @@ public class RevenuePage extends CheckbookBasePageObject {
 	public String getTotalCountForTitlesWidgetDetails() {
 		return findElement(By.id("table_886_info")).getText();
 	}
-	public String getTotalCountForAdvancedSearchPayrollDetails() {
+	public String getTotalCountForAdvancedSearchDetails() {
 		return findElement(By.id("table_280_info")).getText();
 	}
-	public String getAdvancedSearchOGEPayrollDetailsTitle() {
+	public String getAdvancedSearchDetailsTitle() {
 		return findElement(By.className("contract-title")).getText();
 	}
 	
@@ -122,54 +83,54 @@ public class RevenuePage extends CheckbookBasePageObject {
 
 	public void clickOnBudgetFyDropdown(String value) {
 		// TODO Auto-generated method stub
-		Select dropdown = new Select(findElement(By.id("edit-revenue-budget-fiscal-year")));
+		Select dropdown = new Select(findElement(By.id("edit-checkbook-revenue-budget-fiscal-year")));
 		dropdown.selectByVisibleText(value);
 	}
 	public void clickOnFundingClassDropdown(String value) {
 		
 		// TODO Auto-generated method stub
-		Select dropdown = new Select(findElement(By.id("edit-revenue-funding-source")));
+		Select dropdown = new Select(findElement(By.id("edit-checkbook-revenue-funding-class")));
 		dropdown.selectByVisibleText(value);
 	}
 	public void clickOnAgencysDropdown(String value) {
 		// TODO Auto-generated method stub
-		Select dropdown = new Select(findElement(By.id("edit-revenue-agencies")));
+		Select dropdown = new Select(findElement(By.id("edit-checkbook-revenue-agency")));
 		dropdown.selectByVisibleText(value);
 	}
 
 
 	public void sendValueToRevenueSource(String value) {
 		// TODO Auto-generated method stub
-		findElement(By.id("edit-revenue-revenue-source")).sendKeys(value);
+		findElement(By.id("edit-checkbook-revenue-revenue-source")).sendKeys(value);
 	}
 
 
 	public void sendValueToRevenueClass(String value) {
 		// TODO Auto-generated method stub
-		findElement(By.id("edit-revenue-revenue-class")).sendKeys(value);
+		findElement(By.id("edit-checkbook-revenue-revenue-class")).sendKeys(value);
 	}
 
 
 	public void enterRangeValueForAdoptedField(String from, String to) {
 		// TODO Auto-generated method stub
-		findElement(By.id("edit-revenue-adopted-from")).sendKeys(from);
-		findElement(By.id("edit-revenue-adopted-to")).sendKeys(to);
+		findElement(By.id("edit-checkbook-revenue-adopted-budget-from")).sendKeys(from);
+		findElement(By.id("edit-checkbook-revenue-adopted-budget-to")).sendKeys(to);
 		
 	}
 
 
 	public void enterRangeValueForModifiedField(String from, String to) {
 		// TODO Auto-generated method stub
-		findElement(By.id("edit-revenue-modified-from")).sendKeys(from);
-		findElement(By.id("edit-revenue-modified-to")).sendKeys(to);
+		findElement(By.id("edit-checkbook-revenue-modified-from")).sendKeys(from);
+		findElement(By.id("edit-checkbook-revenue-modified-to")).sendKeys(to);
 	}
 
 
 	public void enterRangeValueForRecognizedField(String from, String to) {
 		// TODO Auto-generated method stub
 		
-	findElement(By.id("edit-revenue-recognized-from")).sendKeys(from);
-	findElement(By.id("edit-revenue-recognized-to")).sendKeys(to);
+	findElement(By.id("edit-checkbook-revenue-recognized-from")).sendKeys(from);
+	findElement(By.id("edit-checkbook-revenue-recognized-to")).sendKeys(to);
 	}
   public String getLabelName(String Xpath) {
 	  

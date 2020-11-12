@@ -4929,20 +4929,7 @@ public class DatabaseUtil {
 					return count;
 				}
 				
-				//NYCEDC Contracts	
-				public static int getNYCEDCAEContractsAllTransactionCount(char yearTypeVal) throws SQLException {
-					query = "SELECT COUNT(*) aCount  from contracts_detailed_transactions where " 
-							+ "latest_flag ='Y' and status_flag ='A' and type_of_year ='B' and if_for_all_years ='Y' and is_vendor_flag ='N'";
-					// query2 = "SELECT COUNT(*) aCount from disbursement_line_item_details where
-					// fiscal_year =" + year ;
-
-							rs = amountQueryHelper(yearTypeVal);
-					int count = 0;
-					while (rs.next()) {
-						count = rs.getInt("aCount");
-					}
-					return count;
-				}
+			
 				
 				//Citywide  Contracts	
 				public static int getCitywideAEContractsAllTransactionCount(char yearTypeVal) throws SQLException {

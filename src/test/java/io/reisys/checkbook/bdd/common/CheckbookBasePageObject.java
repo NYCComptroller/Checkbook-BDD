@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.google.gson.JsonObject;
@@ -36,6 +37,8 @@ public class CheckbookBasePageObject extends PageObject {
 	public void waitForElement(By by) {
 		withTimeoutOf(TIMEOUT, ChronoUnit.SECONDS).waitForPresenceOf(by);
 	}
+	
+	
 	
 	public void waitForElement(By by, int timeoutSeconds) {
 		withTimeoutOf(timeoutSeconds, ChronoUnit.SECONDS).waitForPresenceOf(by);
@@ -197,4 +200,8 @@ public class CheckbookBasePageObject extends PageObject {
 		}	
 		return titles;
 	}
+	
+
+	
+	
 }

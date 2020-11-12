@@ -17,12 +17,12 @@ public class CheckbookBaseScenarioSteps extends ScenarioSteps {
 
 	
     public void assertFieldContainsText(String fieldName, String fieldValue, String text) {
-    	ExecutionContext.appendToAssertionData(String.format("Validating '%s' field contains  UI count '%s' and DB count  '%s'", fieldName,fieldValue, text));
+    	ExecutionContext.appendToAssertionData(String.format("Validating '%s' field contains  UI  data'%s' and DB data '%s'", fieldName,fieldValue, text));
     	softAssertion.assertThat(fieldValue.contains(text));
     }
     
     public void assertFieldHasText(String fieldName, String fieldValue, String text) {
-    	ExecutionContext.appendToAssertionData(String.format("Validating '%s' field has  UI count '%s' and DB count  '%s' ", fieldName,fieldValue, text));
+    	ExecutionContext.appendToAssertionData(String.format("Validating '%s' field has  UI value '%s' and Expected value '%s' ", fieldName,fieldValue, text));
     
     		softAssertion.assertThat(fieldValue.equals(text)); 
     	  	

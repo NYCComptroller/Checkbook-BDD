@@ -41,8 +41,7 @@ public void the_System_displays_Citywide_Budget_Transactions() throws Exception 
 	Integer advancedSearchDetailsCountFromDB = DatabaseUtil.getCitywideBudgetTransactionCount('B');
 	assertFieldContainsText("Budget  Advanced Search Default Transaction Count", budgetPage.getTotalCountForAdvancedSearchCitywideBudgetDetails() , advancedSearchDetailsCountFromDB.toString());
 	assertFieldHasText("Budget Advanced search Title", budgetPage.getAdvancedSearchCitywideBudgetDetailsTitle(), "Expense Budget Transactions");
-//	assertFieldContainsText("Spending  Advanced Search Default Transactions Top navigation Amount", spendingPage.getTransactionAmount() , SpendingAmount);
-	
+
 	softAssertion.assertAll();
 }
 	

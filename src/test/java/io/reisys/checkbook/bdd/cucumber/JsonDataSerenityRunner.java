@@ -27,6 +27,8 @@ import com.google.gson.JsonParser;
 
 import cucumber.runtime.junit.FeatureRunner;
 import io.reisys.checkbook.utilities.DatabaseUtil;
+import io.reisys.checkbook.utilities.DatabaseUtil2;
+import io.reisys.checkbook.utilities.DatabaseUtil3;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
 
 public class JsonDataSerenityRunner extends CucumberWithSerenity {
@@ -92,6 +94,8 @@ public class JsonDataSerenityRunner extends CucumberWithSerenity {
 		
 	    try {
 			DatabaseUtil.connectToDatabase();
+			 DatabaseUtil2.connectToDatabase();
+			 DatabaseUtil3.connectToDatabase();
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
@@ -106,6 +110,9 @@ public class JsonDataSerenityRunner extends CucumberWithSerenity {
 
 		try {
 			DatabaseUtil.closeDatabase();
+			 DatabaseUtil2.closeDatabase();
+			 DatabaseUtil3.closeDatabase();
+			 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

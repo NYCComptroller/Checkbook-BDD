@@ -152,6 +152,12 @@
             <database.connection.url>${database.connection.url}</database.connection.url>
             <database.user>${database.user}</database.user>
             <database.password>${database.password}</database.password>
+            <database.connection.url2>${database.connection.url2}</database.connection.url2>
+            <database.user2>${database.user2}</database.user2>
+            <database.password2>${database.password2}</database.password2>
+            <database.connection.url3>${database.connection.url3}</database.connection.url3>
+            <database.user3>${database.user3}</database.user3>
+            <database.password3>${database.password3}</database.password3>
           </systemPropertyVariables>
         </configuration>
       </plugin>

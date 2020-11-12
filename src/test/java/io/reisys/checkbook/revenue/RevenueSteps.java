@@ -93,9 +93,9 @@ public class RevenueSteps extends CheckbookBaseScenarioSteps {
 	}
 	@Then("^the System displays Revenue Transactions for \"([^\"]*)\"$")
 	public void validatePayrollInformation(String yearSelected) throws Exception {
-		Integer advancedSearchDetailsCountFromDB = DatabaseUtil.getRevenueDetailsCount(2020,'B');
-		assertFieldContainsText("Revenue  Advanced Search Default Transaction Count", revenuePage.getTotalCountForAdvancedSearchPayrollDetails() , advancedSearchDetailsCountFromDB.toString());
-		assertFieldHasText("Revenue Advanced search Title", revenuePage.getAdvancedSearchOGEPayrollDetailsTitle(), "Revenue Transactions");
+		Integer advancedSearchDetailsCountFromDB = DatabaseUtil.getRevenueDetailsCount(2018,'B');
+		assertFieldContainsText("Revenue  Advanced Search Default Transaction Count", revenuePage.getTotalCountForAdvancedSearchDetails() , advancedSearchDetailsCountFromDB.toString());
+		assertFieldHasText("Revenue Advanced search Title", revenuePage.getAdvancedSearchDetailsTitle(), "Revenue Transactions");
 		
 		
 		softAssertion.assertAll();

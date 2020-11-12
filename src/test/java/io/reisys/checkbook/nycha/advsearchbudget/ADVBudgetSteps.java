@@ -16,6 +16,7 @@ import io.reisys.checkbook.bdd.cucumber.ExecutionContext;
 import io.reisys.checkbook.home.NYCheckbookPage;
 import io.reisys.checkbook.utilities.CommonUtility;
 import io.reisys.checkbook.utilities.DatabaseUtil;
+import io.reisys.checkbook.utilities.DatabaseUtil2;
 
 public class ADVBudgetSteps extends CheckbookBaseScenarioSteps {
 	
@@ -41,11 +42,12 @@ public class ADVBudgetSteps extends CheckbookBaseScenarioSteps {
 @Then("^the System displays Nycha Budget Transactions$")
 public void the_System_displays_Nycha_Budget_Transactions() throws Exception {
     // Write code here that turns the phrase above into concrete actions
-	Integer advancedSearchDetailsCountFromDB = DatabaseUtil.getNYCHABudgetDetailsCount(2020,'B');
+	
+	Integer advancedSearchDetailsCountFromDB = DatabaseUtil2.getNYCHABudgetDetailsCount1(2020,'B');
 	assertFieldContainsText("budget  Advanced Search Default Transaction Count", budgetPage.getTotalCountForAdvancedSearchOGEBudgetDetails() , advancedSearchDetailsCountFromDB.toString());
 	assertFieldHasText("budget Advanced search Title", budgetPage.getAdvancedSearchOGEBudgetDetailsTitle(), "NYCHA Expense Budget Transactions");
 //	assertFieldContainsText("budget  Advanced Search Default Transactions Top navigation Amount", budgetPage.getTransactionAmount() , budgetAmount);
-	
+	assertEquals( budgetPage.getTotalCountForAdvancedSearchOGEBudgetDetails() , advancedSearchDetailsCountFromDB.toString());
 	softAssertion.assertAll();
 }
 	

@@ -23,99 +23,117 @@ public class PayrollSteps extends CheckbookBaseScenarioSteps {
 	NYCheckbookPage homePage;
 	PayrollPage payrollPage;
 	
-	@Given("^I navigate to Payroll Advanced search form Page$")
+	@Given("^I navigate to payroll Advanced search form Page$")
 	public void navigateToAdvancedSearchPage() {
 		        homePage.open();
 		        payrollPage.navigateToPayrollPage();
-		       // payrollPage.navigateToAdvancedSearchPage();		  	
-	}
+		        payrollPage.navigateToAdvancedSearchPage();		  	
+	}	
 	
-	
-	@When("^I click on Submit$")
-	public void navigateToAdvancedSearchResultsPage()  {
-		payrollPage.navigateToAdvancedSearchPage();
+	//@When("^I click on Submit$")
+	//public void navigateToAdvancedSearchResultsPage()  {
+	//	payrollPage.navigateToAdvancedSearchPage();
 			
-	}
-	
-	@Then("^the System displays Nycha Payroll Transactions$")
-	public void the_System_displays_Nycha_Payroll_Transactions() throws Exception {
-	    // Write code here that turns the phrase above into concrete actions
-		Integer advancedSearchDetailsCountFromDB = DatabaseUtil.getPayrollDetailsCount(2019,'C');
-		assertFieldContainsText("Payroll  Advanced Search Default Transaction Count", payrollPage.getTotalCountForAdvancedSearchPayrollDetails() , advancedSearchDetailsCountFromDB.toString());
-		assertFieldHasText("Payroll Advanced search Title", payrollPage.getAdvancedSearchOGEPayrollDetailsTitle(), "Payroll Transactions");
-//		assertFieldContainsText("Payroll  Advanced Search Default Transactions Top navigation Amount", payrollPage.getTransactionAmount() , PayrollAmount);
-		
-		softAssertion.assertAll();
-	}
+	//}
+	//Range values
 
-	/*
-	 @When("^I enter adopted field range from \"([^\"]*)\" to \"([^\"]*)\"$")
+	 @When("^I enter Base Pay field range from \"([^\"]*)\" to \"([^\"]*)\"$")
 	
-	public void i_enter_adopted_field_range_from_to(String from, String to)  {
+	public void i_enter_BasePay_field_range_from_to(String from, String to)  {
 		from = ExecutionContext.getJsonData().get(from).getAsString();
 		to = ExecutionContext.getJsonData().get(to).getAsString();
 	    // Write code here that turns the phrase above into concrete actions
-		revenuePage.enterRangeValueForAdoptedField(from,to);
+		payrollPage.enterRangeValueForBasePayField(from,to);
 	}
-	@When("^I enter modified field range from \"([^\"]*)\" to \"([^\"]*)\"$")
-	public void i_enter_modified_field_range_from_to(String from, String to) throws Exception {
+	@When("^I enter Overtime Payments field range from \"([^\"]*)\" to \"([^\"]*)\"$")
+	public void i_enter_Overtime_field_range_from_to(String from, String to) throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
 		from = ExecutionContext.getJsonData().get(from).getAsString();
 		to = ExecutionContext.getJsonData().get(to).getAsString();
-		revenuePage.enterRangeValueForModifiedField(from,to);
+		payrollPage.enterRangeValueForOvertimePayField(from,to);
 	}
 
 
-	@When("^I enter recognized field range from \"([^\"]*)\" to \"([^\"]*)\"$")
-	public void i_enter_recognized_field_range_from_to(String from, String to) throws Exception {
+	@When("^I enter Gross Pay YTD field range from \"([^\"]*)\" to \"([^\"]*)\"$")
+	public void i_enter_Gross_Pay_YTD_field_range_from_to(String from, String to) throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
 		from = ExecutionContext.getJsonData().get(from).getAsString();
 		to = ExecutionContext.getJsonData().get(to).getAsString();
-		revenuePage.enterRangeValueForRecognizedField(from,to);
+		payrollPage.enterRangeValueForGrossPayYTDField(from,to);
+	}
+	@When("^I enter Gross Pay field range from \"([^\"]*)\" to \"([^\"]*)\"$")
+	public void i_enter_Gross_Pay_field_range_from_to(String from, String to) throws Exception {
+	    // Write code here that turns the phrase above into concrete actions
+		from = ExecutionContext.getJsonData().get(from).getAsString();
+		to = ExecutionContext.getJsonData().get(to).getAsString();
+		payrollPage.enterRangeValueForGrossPayField(from,to);
+	}
+
+	@When("^I enter Amount field range from \"([^\"]*)\" to \"([^\"]*)\"$")
+	public void i_enter_amount_field_range_from_to(String from, String to) throws Exception {
+	    // Write code here that turns the phrase above into concrete actions
+		from = ExecutionContext.getJsonData().get(from).getAsString();
+		to = ExecutionContext.getJsonData().get(to).getAsString();
+		payrollPage.enterRangeValueForAmountField(from,to);
+	}
+	@When("^I enter Pay Date field range from \"([^\"]*)\" to \"([^\"]*)\"$")
+	public void i_enter_Pay_date_field_range_from_to(String from, String to) throws Exception {
+	    // Write code here that turns the phrase above into concrete actions
+		from = ExecutionContext.getJsonData().get(from).getAsString();
+		to = ExecutionContext.getJsonData().get(to).getAsString();
+		payrollPage.enterRangeValueForPayDateField(from,to);
+	}
+	@When("^I enter Other Payments field range from \"([^\"]*)\" to \"([^\"]*)\"$")
+	public void i_enter_Other_Payments_field_range_from_to(String from, String to) throws Exception {
+	    // Write code here that turns the phrase above into concrete actions
+		from = ExecutionContext.getJsonData().get(from).getAsString();
+		to = ExecutionContext.getJsonData().get(to).getAsString();
+		payrollPage.enterRangeValueForOtherPaymentsField(from,to);
+	}
+
+	@Then("enter \"([^\"]*)\" as value to field Title")
+	public void passTexttoPayrollSource(String value)
+	
+	{
+		value = ExecutionContext.getJsonData().get(value).getAsString();
+		payrollPage.sendValueToTitle(value);
 	}
 
 
 	
-	//-----------------------Advanced search  Steps -------------------------------------
-	@Then("click on revenue fy drop down for \"([^\"]*)\"$")
-	public void clickOnDropdown(String yearSelected)throws Exception{
+	//-----------------------Advanced search  Steps Dropdown.radio-------------------------------------
+	@Then("click on Payroll year drop down and select \"([^\"]*)\"$")
+	public void clickOnYearDropdown(String yearSelected)throws Exception{
 		String year = ExecutionContext.getJsonData().get(yearSelected).getAsString();
-	    revenuePage.clickOnBudgetFyDropdown(year);
+	    payrollPage.clickOnYearDropdown(year);
 	}
-	@Then("click on funding class dropdown for value \"([^\"]*)\"$")
-	public void clickOnFundingClassDropdown(String value)throws Exception{
+	@Then("click on Pay Frequency drop down and select \"([^\"]*)\"$")
+	public void clickOnPaFrequencyDropdown(String value)throws Exception{
 		 value = ExecutionContext.getJsonData().get(value).getAsString();
-	    revenuePage.clickOnFundingClassDropdown(value);
+	    payrollPage.clickOnPayFrequencyDropdown(value);
 	}
-	@Then("click on agency dropdown and select agency \"([^\"]*)\"$")
+	@Then("click on agency drop down and select \"([^\"]*)\"$")
 	public void clickOnAgencyDropdown(String value)throws Exception{
 		value = ExecutionContext.getJsonData().get(value).getAsString();
-	    revenuePage.clickOnAgencysDropdown(value);
+	    payrollPage.clickOnAgencysDropdown(value);
 	}
-	@Then("enter \"([^\"]*)\" as value to field revenue source")
-	public void passTexttoRevenueSource(String value)
-	
-	{
+	@Then("click on salaried type radio button and select \"([^\"]*)\"$")
+	public void clickOnSalariedTypeDropdown(String value)throws Exception{
 		value = ExecutionContext.getJsonData().get(value).getAsString();
-		revenuePage.sendValueToRevenueSource(value);
+	    payrollPage.clickOnSalariedTypeRadiobutton(value);
 	}
-	@Then("enter \"([^\"]*)\" as value to field revenue class")
-	public void passTexttoRevenueClass(String value)
-	{
-		value = ExecutionContext.getJsonData().get(value).getAsString();
-		revenuePage.sendValueToRevenueClass(value);
-	}
+
 	
-	@Then("^I click on Submit button for revenue domain$")
-	public void navigateToRevenueresultsPage()  {
-		revenuePage.navigateToAdvancedSearchSubmit();
+	@Then("^I click on Submit button for payroll domain$")
+	public void navigateToPayrollresultsPage()  {
+		payrollPage.navigateToAdvancedSearchSubmit();
 			
 	}
-	@Then("^the System displays Revenue Transactions for \"([^\"]*)\"$")
+	@Then("^the System displays Payroll Transactions for \"([^\"]*)\"$")
 	public void validatePayrollInformation(String yearSelected) throws Exception {
-		Integer advancedSearchDetailsCountFromDB = DatabaseUtil.getRevenueDetailsCount(2019,'B');
-		assertFieldContainsText("Revenue  Advanced Search Default Transaction Count", revenuePage.getTotalCountForAdvancedSearchPayrollDetails() , advancedSearchDetailsCountFromDB.toString());
-		assertFieldHasText("Revenue Advanced search Title", revenuePage.getAdvancedSearchOGEPayrollDetailsTitle(), "Revenue Transactions");
+		Integer advancedSearchDetailsCountFromDB = DatabaseUtil.getPayrollDetailsCount(2019,'C');
+		assertFieldContainsText("Payroll  Advanced Search Default Transaction Count", payrollPage.getAdvancedSearchTotalCount() , advancedSearchDetailsCountFromDB.toString());
+		assertFieldHasText("Payroll Advanced search Title", payrollPage.getAdvancedSearchTitle(), "Payroll Transactions");
 		
 		
 		softAssertion.assertAll();
@@ -125,22 +143,28 @@ public class PayrollSteps extends CheckbookBaseScenarioSteps {
 	  List<String> LabelsToVerify = CommonUtility.convertJsonArrayToList(ExecutionContext.getJsonData().get(Labelname).getAsJsonArray());
 		for(String name:LabelsToVerify) {
 	    String elementXpath= ExecutionContext.getJsonData().get(name).getAsString();
-		String result = revenuePage.getLabelName(elementXpath);
+		String result = payrollPage.getLabelName(elementXpath);
 		assertEquals( name,result);
 		}
 	}
-	@Then("^\"([^\"]*)\" dropdown has \"([^\"]*)\" as default value$")
+	@Then("^\"([^\"]*)\" drop down has \"([^\"]*)\" as default value$")
 	public void Verifydefaultvalue(String labelName, String value) {
 		 String element= ExecutionContext.getJsonData().get(labelName).getAsString();
-		String result = revenuePage.getDropDownDefaultValue(element);
+		String result = payrollPage.getDropDownDefaultValue(element);
 		assertEquals( value,result);
+		
+	}
+				 
+	@Then("^\"([^\"]*)\" radio button has \"([^\"]*)\" as default value$")
+		public void VerifydefaultvalueRa(String labelName, String value) {
+		 String element= ExecutionContext.getJsonData().get(labelName).getAsString();
+		String result = payrollPage.getRadiobuttonDefaultValue(element);
+	assertEquals( value,result);
+			 
 		 
 	  
 	  
-	}
-
-	 */ 
-	
+	}	
 	
 
 

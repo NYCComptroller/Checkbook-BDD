@@ -11,6 +11,39 @@
 	    				"Top 5 Agencies by Percent Difference",
 	    				"Top 5 Expense Categories",
 	    				"Top 5 Expense Categories by Committed Expense Budget",
-	    				"Top 5 Expense Categories by Percent Difference"]   		
+	    				"Top 5 Expense Categories by Percent Difference"]   ,
+	    				
+	 "Year" : "2019",
+	"Selected Agency":"Administration for C...",
+	"Selected Department" :"ADMINISTRATIVE-PS",
+	"Selected Expense Category":"ALLOWANCE FOR UNIFORMS",
+	"Selected DF Department" :"ADMINISTRATIVE-PS [005]",
+	"Selected DF Expense Category":"ALLOWANCE FOR UNIFORMS [064]",
+	"Selected Budget Code":"0100",	
+	"Selected Budget Name":"COMMISSIONER OFFICE",
+	"Adopted From":"0",
+	"Adopted To":"1000000",
+	"Modified From":"0",
+	"Modified To":"2000000",
+	"Pre Encumbered From":"0",
+	"Pre Encumbered To":"500000",
+	
+	"Encumbered From":"0",
+	"Encumbered To":"1000000",
+	"Accrued Expense From":"0",
+	"Accrued Expense To":"2000000",
+	"Cash Payments From":"0",
+	"Cash Payments To":"500000",
+	"Post Adjustments From":"0",
+	"Post Adjustments To":"500000",
+	
+	"Labels":["Year","Agency","Department","Expense Category","Budget Name","Budget Code"],
+	"Year":"edit-checkbook-budget-year",
+	"Agency":"edit-checkbook-budget-agency",
+	"Department":"edit-checkbook-budget-department",
+	"Expense Category":"edit-checkbook-budget-expense-category",
+	"Budget Name":"edit-checkbook-budget-budget-name",
+	"Budget Code":"edit-checkbook-budget-budget-code"				
+			
 	
 }

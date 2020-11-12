@@ -42,7 +42,7 @@ public void the_System_displays_Citywide_Revenue_Transactions() throws Exception
 	assertFieldContainsText("Revenue  Advanced Search Default Transaction Count", revenuePage.getTotalCountForAdvancedSearchCitywideRevenueDetails() , advancedSearchDetailsCountFromDB.toString());
 	assertFieldHasText("Revenue Advanced search Title", revenuePage.getAdvancedSearchCitywideRevenueDetailsTitle(), "Expense Budget Transactions");
 //	assertFieldContainsText("Spending  Advanced Search Default Transactions Top navigation Amount", spendingPage.getTransactionAmount() , SpendingAmount);
-	
+	assertEquals( revenuePage.getTotalCountForAdvancedSearchCitywideRevenueDetails() , advancedSearchDetailsCountFromDB.toString());
 	softAssertion.assertAll();
 }
 	

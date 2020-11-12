@@ -15,7 +15,7 @@ import io.reisys.checkbook.bdd.common.CheckbookBaseScenarioSteps;
 import io.reisys.checkbook.bdd.cucumber.ExecutionContext;
 import io.reisys.checkbook.home.NYCheckbookPage;
 import io.reisys.checkbook.utilities.CommonUtility;
-import io.reisys.checkbook.utilities.DatabaseUtil;
+import io.reisys.checkbook.utilities.DatabaseUtil3;
 
 public class DFContractsSteps extends CheckbookBaseScenarioSteps {
 	
@@ -52,7 +52,7 @@ public class DFContractsSteps extends CheckbookBaseScenarioSteps {
 	@And("^the System displays NYCEDC Contracts Transactions$")
     public void the_System_displays_citywide_Contracts_Transactions() throws Exception {
     // Write code here that turns the phrase above into concrete actions
-	Integer dataFeedsDetailsCountFromDB = DatabaseUtil.getNYCEDCAEContractsAllTransactionCount('B');
+	Integer dataFeedsDetailsCountFromDB = DatabaseUtil3.getNYCEDCAEContractsAllTransactionCount('B');
 	assertFieldContainsText("Contracts  Data feeds Default Transaction Count", ContractsPage.getTotalCountForDatfeeds() ,dataFeedsDetailsCountFromDB.toString());
 	//assertFieldHasText("Contracts Advanced search Title", ContractsPage.getAdvancedSearchOGEPayrollDetailsTitle(), "NYCHA Contracts Transactions");
 //	assertFieldContainsText("Contracts  Advanced Search Default Transactions Top navigation Amount", ContractsPage.getTransactionAmount() , ContractsAmount);
