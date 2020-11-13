@@ -5,198 +5,244 @@
     <version>0.0.1-SNAPSHOT</version>
 
   	<properties>
-	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	    <java.version>1.8</java.version>
-	    <serenity.version>1.9.25</serenity.version>
-	    <serenity.maven.version>1.9.25</serenity.maven.version>
-	    <serenity.cucumber.version>1.9.8</serenity.cucumber.version>
-	    <maven.compiler.source>1.8</maven.compiler.source>
-	    <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <serenity.version>2.1.1</serenity.version>
+        <serenity.maven.version>2.1.1</serenity.maven.version>
+        <serenity.cucumber.version>1.9.39</serenity.cucumber.version>
+        <selenium.driver.version>3.141.59</selenium.driver.version>
+        <javafaker.version>1.0.2</javafaker.version>
+        <encoding>UTF-8</encoding>
+    	<maven.compiler.source>1.8</maven.compiler.source>
+    	<maven.compiler.target>1.8</maven.compiler.target>
   	</properties>
 
   
    	<dependencies>
-	    <dependency>
-	      <groupId>org.slf4j</groupId>
-	      <artifactId>slf4j-simple</artifactId>
-	      <version>1.7.7</version>
-	    </dependency>
-	    <dependency>
-	      <groupId>net.serenity-bdd</groupId>
-	      <artifactId>serenity-core</artifactId>
-	      <version>${serenity.version}</version>
-	      <exclusions>
-	                <exclusion>
-	                    <groupId>net.serenity-bdd</groupId>
-	                    <artifactId>serenity-report-resources</artifactId>
-	                </exclusion>
-	            </exclusions>
-	    </dependency>
-	    <dependency>
-	      <groupId>net.serenity-bdd</groupId>
-	      <artifactId>serenity-junit</artifactId>
-	      <version>${serenity.version}</version>
-	      <scope>test</scope>
-	    </dependency>
-	    <dependency>
-	      <groupId>net.serenity-bdd</groupId>
-	      <artifactId>serenity-screenplay</artifactId>
-	      <version>${serenity.version}</version>
-	    </dependency>
-	    <dependency>
-	      <groupId>net.serenity-bdd</groupId>
-	      <artifactId>serenity-screenplay-webdriver</artifactId>
-	      <version>${serenity.version}</version>
-	    </dependency>
-	    <dependency>
-	      <groupId>net.serenity-bdd</groupId>
-	      <artifactId>serenity-cucumber</artifactId>
-	      <version>${serenity.cucumber.version}</version>
-	    </dependency>
-	    <dependency>
-	      <groupId>org.assertj</groupId>
-	      <artifactId>assertj-core</artifactId>
-	      <version>3.6.2</version>
-	      <scope>test</scope>
-	    </dependency>
-	    <dependency>
-	      <groupId>org.hamcrest</groupId>
-	      <artifactId>hamcrest-all</artifactId>
-	      <version>1.3</version>
-	      <scope>test</scope>
-	    </dependency>
-	    <dependency>
+         <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.0.13</version>
+        </dependency>
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-core</artifactId>
+            <version>${serenity.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-junit</artifactId>
+            <version>${serenity.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-screenplay</artifactId>
+            <version>${serenity.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-screenplay-webdriver</artifactId>
+            <version>${serenity.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-cucumber</artifactId>
+            <version>${serenity.cucumber.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.16.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <version>1.3</version>
+        </dependency>
+        <dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.5</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.6</version>
+		</dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13</version>
+        </dependency>
+        <dependency>
+	    	<groupId>commons-lang</groupId>
+	    	<artifactId>commons-lang</artifactId>
+	    	<version>2.6</version>
+		</dependency>
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>${javafaker.version}</version>
+        </dependency>
+        <!--  508 Testing with Axe -->
+    	<dependency>
+      		<groupId>com.deque</groupId>
+      		<artifactId>axe-selenium</artifactId>
+      		<version>2.1</version>
+    	</dependency>   
+    	<!--  Dependencies for Drivers -->
+	   <dependency>
 	      <groupId>org.seleniumhq.selenium</groupId>
 	      <artifactId>selenium-remote-driver</artifactId>
-	      <version>3.11.0</version>
+	      <version>${selenium.driver.version}</version>
 	    </dependency>		
 	    <dependency>
 	      <groupId>org.seleniumhq.selenium</groupId>
 	      <artifactId>selenium-chrome-driver</artifactId>
-	      <version>3.11.0</version>
+	      <version>${selenium.driver.version}</version>
 	    </dependency>
 	    <dependency>
 	      <groupId>org.seleniumhq.selenium</groupId>
 	      <artifactId>selenium-firefox-driver</artifactId>
-	      <version>3.11.0</version>
+	      <version>${selenium.driver.version}</version>
 	    </dependency>
 	    <dependency>
 	      <groupId>org.seleniumhq.selenium</groupId>
 	      <artifactId>selenium-ie-driver</artifactId>
-	      <version>3.11.0</version>
+	      <version>${selenium.driver.version}</version>
 	    </dependency>
 	    <dependency>
 	      <groupId>org.seleniumhq.selenium</groupId>
 	      <artifactId>selenium-safari-driver</artifactId>
-	      <version>3.11.0</version>
+	      <version>${selenium.driver.version}</version>
 	    </dependency>
 	    <dependency>
 	      <groupId>com.github.detro</groupId>
 	      <artifactId>phantomjsdriver</artifactId>
 	      <version>1.2.0</version>
 	    </dependency>
+        <dependency>
+            <groupId>org.jboss.aerogear</groupId>
+            <artifactId>aerogear-otp-java</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.5</version>
+            <scope>test</scope>
+        </dependency>
 	    <dependency>
-	      <groupId>com.deque</groupId>
-	      <artifactId>axe-selenium</artifactId>
-	      <version>2.1</version>
-	    </dependency>	
-        <dependency>
-            <groupId>net.sourceforge.jexcelapi</groupId>
-            <artifactId>jxl</artifactId>
-            <version>2.6.12</version>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-server</artifactId>
-            <version>3.3.1</version>
-        </dependency>
-        <dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi</artifactId>
+		   	<version>3.17</version>
+		   	 <!--<scope>test</scope>-->
+	  	</dependency> 
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi-ooxml</artifactId>
+		    <version>3.17</version>
+		</dependency>
+		<dependency>
+    		<groupId>net.serenity-bdd</groupId>
+    		<artifactId>serenity-rest-assured</artifactId>
+    		<version>${serenity.version}</version>
+		</dependency>
+		 
+ <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>9.4.1212</version>
-        </dependency>
-		<dependency>
-	    	<groupId>commons-lang</groupId>
-	    	<artifactId>commons-lang</artifactId>
-	    	<version>2.6</version>
-		</dependency>    
-	        <dependency>
-	          <groupId>net.serenity-bdd</groupId>
-		         <artifactId>serenity-report-resources</artifactId>
-		         <version>${serenity.maven.version}</version>
-				 <scope>system</scope>
-				 <systemPath>${project.basedir}/src/test/resources/customization/serenity-report-resources.jar</systemPath>		        
-			</dependency>		     
+        </dependency> 
+ 
+			     
     </dependencies>
     
    	<build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.20</version>
-        <configuration>
-          <includes>
-            <include>*Runner.java</include>
-          </includes>
-          <excludes>
-            <exclude>**/JsonDataSerenityRunner.java</exclude>
-          </excludes>
-	    
-          <testFailureIgnore>true</testFailureIgnore>
-          <systemPropertyVariables>
-            <webdriver.base.url>${webdriver.base.url}</webdriver.base.url>
-            <webdriver.driver>${webdriver.driver}</webdriver.driver>
-            <webdriver.remote.driver>${webdriver.remote.driver}</webdriver.remote.driver>
-            <webdriver.remote.url>${webdriver.remote.url}</webdriver.remote.url> 
-            <database.connection.url>${database.connection.url}</database.connection.url>
-            <database.user>${database.user}</database.user>
-            <database.password>${database.password}</database.password>
-            <database.connection.url2>${database.connection.url2}</database.connection.url2>
-            <database.user2>${database.user2}</database.user2>
-            <database.password2>${database.password2}</database.password2>
-            <database.connection.url3>${database.connection.url3}</database.connection.url3>
-            <database.user3>${database.user3}</database.user3>
-            <database.password3>${database.password3}</database.password3>
-          </systemPropertyVariables>
-        </configuration>
-      </plugin>
-
-      <plugin>
-        <groupId>net.serenity-bdd.maven.plugins</groupId>       
-        <artifactId>serenity-maven-plugin</artifactId>
-        <version>${serenity.maven.version}</version>
-        <dependencies>
-	        <dependency>
-	            <groupId>net.serenity-bdd</groupId>
-	            <artifactId>serenity-core</artifactId>
-	            <version>${serenity.version}</version>
-	            <exclusions>
-	                <exclusion>
-	                    <groupId>net.serenity-bdd</groupId>
-	                    <artifactId>serenity-report-resources</artifactId>
-	                </exclusion>
-	            </exclusions>
-	        </dependency>
-	        <dependency>
-	          <groupId>net.serenity-bdd</groupId>
-		         <artifactId>serenity-report-resources</artifactId>
-		         <version>${serenity.maven.version}</version>
-				 <scope>system</scope>
-				 <systemPath>${project.basedir}/src/test/resources/customization/serenity-report-resources.jar</systemPath>		        
-			</dependency>
-		</dependencies>    
-        <executions>
-          <execution>
-            <id>serenity-reports</id>
-            <phase>post-integration-test</phase>             
-            <goals>
-              <goal>aggregate</goal>                       
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
-    </plugins>
+        <plugins>
+			<plugin>
+			    <groupId>net.serenity-bdd.maven.plugins</groupId>
+			    <artifactId>serenity-maven-plugin</artifactId>
+			    <version>${serenity.version}</version>
+			    <dependencies>
+			        <dependency> 
+			            <groupId>net.serenity-bdd</groupId>
+			            <artifactId>serenity-single-page-report</artifactId>
+			            <version>${serenity.version}</version>
+			        </dependency>
+			    </dependencies>
+			    <configuration>
+			        <tags>${tags}</tags>
+			        <reports>single-page-html</reports> 
+			    </configuration>
+			    <executions>
+			        <execution>
+			            <id>serenity-reports</id>
+			            <phase>post-integration-test</phase>
+			            <goals>
+			                <goal>aggregate</goal>
+			            </goals>
+			        </execution>
+			    </executions>
+			</plugin>
+            <plugin>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>2.20</version>
+                <configuration>
+                    <includes>
+                        <include>**/Runner.java</include>
+                    </includes>
+                    <excludes>
+            			<exclude>**/JsonDataSerenityRunner.java</exclude>
+          			</excludes>
+          			<testFailureIgnore>true</testFailureIgnore>
+			          <systemPropertyVariables>
+			            <webdriver.base.url>${webdriver.base.url}</webdriver.base.url>
+			            <webdriver.driver>${webdriver.driver}</webdriver.driver>
+			            <webdriver.remote.driver>${webdriver.remote.driver}</webdriver.remote.driver>
+			            <webdriver.remote.url>${webdriver.remote.url}</webdriver.remote.url>
+			            <database.connection.url>${database.connection.url}</database.connection.url> 
+			            <database.user>${database.user}</database.user>
+            			<database.password>${database.password}</database.password> 
+            			
+            		
+			            <database.connection.url2>${database.connection.url2}</database.connection.url2>
+			            <database.user2>${database.user2}</database.user2>
+			            <database.password2>${database.password2}</database.password2>
+			            <database.connection.url3>${database.connection.url3}</database.connection.url3>
+			            <database.user3>${database.user3}</database.user3>
+			            <database.password3>${database.password3}</database.password3> 
+			 
+            			
+            			           			 
+			            <webdriver.provided.type>${webdriver.provided.type}</webdriver.provided.type>
+			            <webdriver.provided.mydriver>${webdriver.provided.mydriver}</webdriver.provided.mydriver>
+			            <thucydides.driver.capabilities>${thucydides.driver.capabilities}</thucydides.driver.capabilities>
+			            <grid.url>${grid.url}</grid.url>
+			          </systemPropertyVariables>
+                </configuration>
+                <executions>
+		          <execution>
+		            <goals>
+		              <goal>integration-test</goal>
+		              <goal>verify</goal>
+		            </goals>
+		          </execution>
+		        </executions>
+            </plugin>
+            <plugin>
+                <groupId>net.serenity-bdd.maven.plugins</groupId>
+                <artifactId>serenity-maven-plugin</artifactId>
+                <version>${serenity.maven.version}</version>
+                <executions>
+                    <execution>
+                        <id>serenity-reports</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>aggregate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
 </project>
